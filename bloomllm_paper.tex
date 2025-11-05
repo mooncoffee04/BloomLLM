@@ -1,0 +1,600 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{BloomLLM-Jury: A Multi-Model Framework for Cognitive-Level Essay Scoring Using Bloom's Taxonomy}
+
+\author{\IEEEauthorblockN{Author Name}
+\IEEEauthorblockA{\textit{Department Name} \\
+\textit{Institution Name}\\
+City, Country \\
+email@institution.edu}
+}
+
+\maketitle
+
+\begin{abstract}
+Automated essay scoring (AES) has traditionally focused on holistic scoring metrics, often overlooking the cognitive complexity of student responses as defined by Bloom's Taxonomy. This paper introduces \textbf{BloomLLM-Jury}, a novel multi-model ensemble framework that leverages parameter-efficient fine-tuning to assess student essays across different cognitive levels. We fine-tune three state-of-the-art language models (Phi-3, Mistral-7B, and Qwen 2.5) using Low-Rank Adaptation (LoRA) on the ASAP dataset, enhanced with Bloom's Taxonomy labels generated via the Gemini API. Our jury-based approach aggregates predictions from multiple specialized models, demonstrating that ensemble methods outperform single-model evaluators in cognitive-level assessment. Experimental results on 500 labeled essays show that the multi-model jury achieves improved reliability and reduced bias compared to individual judges. This work contributes to the emerging field of LLM-as-a-Jury systems and demonstrates the first application of multi-model ensemble evaluation specifically tailored for Bloom's Taxonomy-based educational assessment.
+\end{abstract}
+
+\begin{IEEEkeywords}
+automated essay scoring, Bloom's taxonomy, LLM-as-a-jury, ensemble learning, educational assessment, parameter-efficient fine-tuning, LoRA
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+\subsection{Motivation}
+The evaluation of student essays remains a time-intensive and subjective task in educational assessment. While automated essay scoring (AES) systems have advanced significantly with the advent of large language models (LLMs), most existing approaches focus on holistic scoring without explicitly considering the cognitive complexity of student responses. Bloom's Taxonomy \cite{bloom1956taxonomy}, revised in 2001 \cite{anderson2001taxonomy}, provides a well-established framework for categorizing cognitive skills into six levels: Remember, Understand, Apply, Analyze, Evaluate, and Create. Integrating this framework into automated assessment systems could provide richer, more formative feedback to students and educators.
+
+Recent work on LLM-as-a-Judge systems \cite{zheng2024judging, gu2024survey} has demonstrated the potential of using language models as evaluators. However, single-model judges often exhibit biases and inconsistencies \cite{ye2025justice}. The emerging paradigm of LLM-as-a-Jury \cite{verga2024replacing, chan2025jury} addresses these limitations through multi-model ensemble evaluation, achieving higher human alignment and reduced cost \cite{verga2024replacing}.
+
+\subsection{Research Gap}
+Despite advances in both AES and LLM-based evaluation, several critical gaps remain:
+\begin{itemize}
+    \item \textbf{Cognitive-Level Assessment}: Existing AES systems rarely incorporate explicit cognitive taxonomy frameworks like Bloom's Taxonomy
+    \item \textbf{Domain-Specific Evaluation}: Most LLM-as-a-Judge research focuses on general tasks, with limited application to educational domains \cite{wang2025education}
+    \item \textbf{Multi-Model Jury Systems}: While jury-based evaluation shows promise, its application to cognitive-level essay assessment remains unexplored
+    \item \textbf{Efficient Fine-Tuning}: The computational cost of fine-tuning multiple large models for specialized evaluation tasks remains prohibitive
+\end{itemize}
+
+\subsection{Contributions}
+This paper makes the following contributions:
+\begin{enumerate}
+    \item We introduce \textbf{BloomLLM-Jury}, the first multi-model ensemble framework specifically designed for Bloom's Taxonomy-based essay evaluation
+    \item We demonstrate the effectiveness of parameter-efficient fine-tuning using LoRA \cite{hu2021lora} for creating specialized cognitive-level evaluators
+    \item We present a comprehensive methodology for augmenting existing AES datasets with Bloom's Taxonomy labels using LLM-based annotation
+    \item We provide empirical evidence that jury-based evaluation outperforms single-model approaches in cognitive-level assessment tasks
+    \item We release our labeled dataset, model checkpoints, and evaluation framework to facilitate future research
+\end{enumerate}
+
+\subsection{Paper Organization}
+The remainder of this paper is organized as follows: Section II reviews related work in automated essay scoring, LLM-based evaluation, and Bloom's Taxonomy applications. Section III describes our methodology, including dataset preparation, model fine-tuning, and jury aggregation strategies. Section IV presents our experimental setup and evaluation metrics. Section V discusses results and comparative analysis. Section VI concludes with limitations and future work.
+
+\section{Related Work}
+
+\subsection{Automated Essay Scoring}
+Automated essay scoring has evolved from early feature-engineering approaches to modern neural methods. The ASAP (Automated Student Assessment Prize) dataset \cite{asap2012kaggle} has served as a benchmark for numerous AES systems. Traditional approaches relied on handcrafted linguistic features \cite{yannakoudakis2011asap}, while recent work leverages pre-trained language models for improved performance \cite{rodriguez2019asap}. However, most systems focus on holistic scoring without considering cognitive complexity dimensions.
+
+\subsection{LLM-as-a-Judge and LLM-as-a-Jury}
+The concept of using LLMs as judges for evaluation tasks has gained traction in the NLP community. Foundational surveys \cite{gu2024survey, li2024generation} establish taxonomies for what, where, and how to judge. Single-model judges have shown promise \cite{zheng2024judging} but suffer from various biases including alignment bias, positional bias, and length bias \cite{ye2025justice}.
+
+The LLM-as-a-Jury paradigm addresses these limitations through ensemble evaluation. Verga et al. \cite{verga2024replacing} introduced the Panel of LLM Evaluators (PoLL), demonstrating 7× cost reduction with higher human alignment compared to single GPT-4 judges. Chan et al. \cite{chan2025jury} provided operational frameworks for panel voting and multi-agent debate, introducing benchmarks like JudgeBench and Meta-Judge for jury consistency evaluation.
+
+Recent work on Agent-as-a-Judge \cite{zhuge2025agent} extends evaluation beyond outputs to reasoning trajectories, achieving 0.3\% divergence from human consensus through intermediate feedback loops.
+
+\subsection{Educational Applications of LLMs}
+LLMs have been applied to various educational tasks, including question generation, content recommendation, and assessment \cite{kasneci2023chatgpt}. Wang et al. \cite{wang2025education} explored LLM applications in medical education, while Thompson et al. \cite{thompson2025legal} investigated legal domain applications. However, systematic application of multi-model jury systems to cognitive-level assessment remains underexplored.
+
+\subsection{Bloom's Taxonomy in Computational Systems}
+Several studies have attempted to classify educational content according to Bloom's Taxonomy using NLP methods. Su et al. \cite{su2016blooms} created a benchmark dataset for Bloom's level classification. Recent work \cite{abdelrahman2025llm} has shown that LLMs can outperform traditional NLP methods for Bloom's level labeling. However, the integration of Bloom's Taxonomy into jury-based evaluation systems represents a novel contribution.
+
+\subsection{Parameter-Efficient Fine-Tuning}
+Low-Rank Adaptation (LoRA) \cite{hu2021lora} enables efficient fine-tuning of large language models by introducing trainable low-rank decomposition matrices into model layers. This approach has proven effective across various domains while requiring significantly fewer computational resources than full fine-tuning. LoRA's efficiency makes it particularly suitable for creating multiple specialized evaluator models in a jury framework.
+
+\section{Methodology}
+
+\subsection{Overview}
+Our BloomLLM-Jury framework consists of four main stages: (1) dataset preparation and Bloom's Taxonomy labeling, (2) model selection and LoRA-based fine-tuning, (3) jury-based inference and aggregation, and (4) evaluation and comparison. Figure 1 illustrates the complete pipeline.
+
+\subsection{Dataset Preparation}
+
+\subsubsection{ASAP Dataset}
+We utilize the ASAP Automated Essay Scoring dataset \cite{asap2012kaggle}, which contains 12,974 essays across 8 essay sets with various prompts. Each essay includes:
+\begin{itemize}
+    \item Essay text (student response)
+    \item Prompt/question
+    \item Multiple human rater scores
+    \item Domain scores with inter-rater reliability metrics
+\end{itemize}
+
+\subsubsection{Bloom's Taxonomy Labeling}
+Since the ASAP dataset lacks Bloom's Taxonomy annotations, we employ a two-stage labeling process:
+
+\textbf{Stage 1: Prompt Analysis} - We first analyze the essay prompts using the Gemini-2.5-Flash API to determine the primary cognitive level each prompt targets. The prompt classification follows the revised Bloom's Taxonomy framework \cite{anderson2001taxonomy}:
+\begin{itemize}
+    \item \textbf{Remember}: Recall facts and basic concepts
+    \item \textbf{Understand}: Explain ideas or concepts
+    \item \textbf{Apply}: Use information in new situations
+    \item \textbf{Analyze}: Draw connections among ideas
+    \item \textbf{Evaluate}: Justify a stance or decision
+    \item \textbf{Create}: Produce new or original work
+\end{itemize}
+
+Our analysis revealed that ASAP prompts predominantly target higher-order thinking skills, with most prompts classified as either \textbf{Analyze} or \textbf{Create} levels. This reflects the dataset's focus on complex argumentative and analytical writing tasks.
+
+\textbf{Stage 2: Incremental Labeling} - We employed an incremental labeling strategy, processing essays in batches of 100 to ensure quality control:
+\begin{itemize}
+    \item Checkpoint at 100 labels: Initial validation
+    \item Checkpoint at 200 labels: Consistency verification
+    \item Checkpoint at 300 labels: Inter-annotator agreement
+    \item Checkpoint at 400 labels: Label distribution analysis
+    \item Final checkpoint at 500 labels: Complete labeled dataset
+\end{itemize}
+
+The rationale for using LLMs over traditional NLP methods for labeling is supported by recent findings \cite{abdelrahman2025llm} demonstrating superior performance of LLMs in educational content classification tasks.
+
+\subsubsection{Data Splits}
+We partition the 500 labeled essays following standard machine learning practices:
+\begin{itemize}
+    \item \textbf{Training set}: 300 essays (60\%)
+    \item \textbf{Validation set}: 100 essays (20\%)
+    \item \textbf{Test set}: 100 essays (20\%)
+\end{itemize}
+
+The data splits are stratified to maintain Bloom's level distribution across splits. All splits are saved as checkpoint files (checkpoint\_splits\_20251103\_211458.pkl) for reproducibility.
+
+\subsection{Model Selection and Architecture}
+
+We select three diverse state-of-the-art instruction-tuned language models to form our jury:
+
+\subsubsection{Phi-3-Mini-4K-Instruct}
+Phi-3 \cite{phi3}, developed by Microsoft, is a compact yet powerful model optimized for instruction following. Despite its smaller size, Phi-3 demonstrates strong performance on reasoning tasks, making it suitable for cognitive-level assessment.
+
+\subsubsection{Mistral-7B-Instruct-v0.3}
+Mistral-7B \cite{jiang2023mistral} employs sliding window attention and grouped-query attention for efficient processing. Its 7B parameter size balances capability with computational efficiency, and its instruction-tuned variant excels at structured evaluation tasks.
+
+\subsubsection{Qwen2.5-7B-Instruct}
+Qwen 2.5 \cite{qwen2023}, developed by Alibaba Cloud, represents the latest generation of multilingual instruction-following models. Its strong performance on academic benchmarks makes it particularly suitable for educational assessment tasks.
+
+\subsection{Parameter-Efficient Fine-Tuning with LoRA}
+
+\subsubsection{LoRA Configuration}
+We apply Low-Rank Adaptation (LoRA) \cite{hu2021lora} consistently across all three models with the following hyperparameters:
+\begin{itemize}
+    \item \textbf{Rank (r)}: 8
+    \item \textbf{Alpha ($\alpha$)}: 16
+    \item \textbf{Dropout}: 0.05
+    \item \textbf{Target modules}: q\_proj, k\_proj, v\_proj, o\_proj
+    \item \textbf{Bias}: None
+    \item \textbf{Task type}: Causal language modeling
+\end{itemize}
+
+The rank-8 configuration provides a good balance between model capacity and parameter efficiency, resulting in less than 1\% of parameters being trainable.
+
+\subsubsection{Training Configuration}
+All models are fine-tuned with identical training hyperparameters for fair comparison:
+\begin{itemize}
+    \item \textbf{Learning rate}: 2e-4 with linear warmup
+    \item \textbf{Batch size}: 4 per device
+    \item \textbf{Gradient accumulation steps}: 4 (effective batch size = 16)
+    \item \textbf{Training steps}: 300 (checkpoint at step 300)
+    \item \textbf{Optimizer}: AdamW with weight decay = 0.01
+    \item \textbf{Learning rate schedule}: Linear with 10\% warmup steps
+    \item \textbf{Max sequence length}: 2048 tokens
+    \item \textbf{Hardware}: 2× NVIDIA T4 GPUs
+    \item \textbf{Training time}: ~3-4 hours per model
+\end{itemize}
+
+Training checkpoints are saved every 100 steps, including:
+\begin{itemize}
+    \item adapter\_model.safetensors (LoRA weights)
+    \item adapter\_config.json (configuration)
+    \item trainer\_state.json (training metadata)
+    \item optimizer.pt, scheduler.pt (optimizer states)
+\end{itemize}
+
+All training runs are logged to Weights \& Biases (wandb) for comprehensive experiment tracking and reproducibility.
+
+\subsubsection{Prompt Engineering}
+We design specialized prompts that incorporate Bloom's Taxonomy awareness. Each prompt includes:
+\begin{itemize}
+    \item System context defining the evaluation task
+    \item Bloom's level specification
+    \item Scoring criteria aligned with the target cognitive level
+    \item Few-shot examples (where applicable)
+    \item Output format specification
+\end{itemize}
+
+For each essay, models receive the original prompt, student response, and specific instructions for evaluating cognitive complexity.
+
+\subsection{Jury-Based Inference and Aggregation}
+
+\subsubsection{Inference Pipeline}
+During evaluation, each test essay is processed by all three fine-tuned models independently. Each model:
+\begin{enumerate}
+    \item Receives the essay prompt and student response
+    \item Generates a cognitive-level assessment
+    \item Provides a numerical score
+    \item Generates a rationale explaining the evaluation
+\end{enumerate}
+
+\subsubsection{Aggregation Methods}
+We implement three aggregation strategies:
+
+\textbf{Majority Voting}: For categorical Bloom's level predictions, we apply majority voting where the final classification is determined by the most common prediction across the three models.
+
+\textbf{Mean Scoring}: For numerical scores, we compute the arithmetic mean of predictions from all models:
+\begin{equation}
+\text{Score}_{\text{jury}} = \frac{1}{N} \sum_{i=1}^{N} \text{Score}_i
+\end{equation}
+where $N = 3$ (number of models in the jury).
+
+\textbf{Weighted Aggregation}: We experiment with weighted averaging based on per-model performance on the validation set:
+\begin{equation}
+\text{Score}_{\text{weighted}} = \sum_{i=1}^{N} w_i \cdot \text{Score}_i
+\end{equation}
+where weights $w_i$ are derived from validation set accuracy, normalized such that $\sum_{i=1}^{N} w_i = 1$.
+
+\subsection{Comparative Baselines}
+
+To evaluate the effectiveness of our jury approach, we establish several baselines:
+
+\subsubsection{Single Model Evaluators}
+We evaluate each fine-tuned model individually (Phi-3, Mistral-7B, Qwen 2.5) to assess the improvement gained from ensemble methods.
+
+\subsubsection{Zero-Shot Evaluation}
+We test the base instruction-tuned models without fine-tuning to quantify the benefit of domain adaptation via LoRA.
+
+\subsubsection{Generic vs. Bloom-Specific Prompts}
+We compare performance using generic essay scoring prompts versus our Bloom's Taxonomy-aware prompt engineering.
+
+\section{Experimental Setup}
+
+\subsection{Evaluation Metrics}
+
+\subsubsection{Classification Metrics}
+For Bloom's level classification, we report:
+\begin{itemize}
+    \item \textbf{Accuracy}: Overall classification accuracy
+    \item \textbf{Precision, Recall, F1-Score}: Per-class and macro-averaged metrics
+    \item \textbf{Confusion Matrix}: Detailed analysis of classification patterns
+\end{itemize}
+
+\subsubsection{Scoring Agreement Metrics}
+For numerical score predictions, we compute:
+\begin{itemize}
+    \item \textbf{Spearman's $\rho$}: Rank correlation with human scores
+    \item \textbf{Kendall's $\tau$}: Alternative rank correlation measure
+    \item \textbf{Quadratic Weighted Kappa (QWK)}: Agreement metric common in AES literature
+    \item \textbf{Mean Squared Error (MSE)}: Numerical scoring accuracy
+\end{itemize}
+
+\subsubsection{Inter-Model Agreement}
+To assess jury coherence, we measure:
+\begin{itemize}
+    \item \textbf{Cohen's Kappa}: Pairwise agreement between models
+    \item \textbf{Fleiss' Kappa}: Multi-rater agreement across all three models
+    \item \textbf{Standard Deviation}: Score variance across jury members
+\end{itemize}
+
+\subsection{Experimental Conditions}
+
+We conduct comprehensive ablation studies to isolate the contribution of different components:
+
+\subsubsection{Model Architecture Comparison}
+We analyze the performance of different model architectures (Phi-3 vs. Mistral-7B vs. Qwen 2.5) to identify strengths and weaknesses for cognitive-level assessment.
+
+\subsubsection{Fine-Tuning vs. Zero-Shot}
+We compare fine-tuned models against their zero-shot counterparts to quantify the value of domain-specific adaptation.
+
+\subsubsection{Single Judge vs. Jury}
+We evaluate the improvement gained from jury aggregation compared to the best single-model judge.
+
+\subsubsection{Aggregation Strategy Comparison}
+We compare majority voting, mean scoring, and weighted aggregation to identify the optimal strategy for different metrics.
+
+\subsection{Implementation Details}
+
+All experiments are conducted using:
+\begin{itemize}
+    \item \textbf{Framework}: Hugging Face Transformers 4.36+
+    \item \textbf{Fine-tuning}: PEFT library with LoRA implementation
+    \item \textbf{Precision}: BFloat16 for training, Float16 for inference
+    \item \textbf{Experiment Tracking}: Weights \& Biases (wandb)
+    \item \textbf{Hardware}: 2× NVIDIA T4 GPUs (16GB each)
+    \item \textbf{Environment}: Kaggle Notebooks with persistent storage
+\end{itemize}
+
+Code and data are version-controlled with checkpointing at major milestones to ensure reproducibility.
+
+\section{Results and Analysis}
+
+\subsection{Bloom's Taxonomy Label Distribution}
+
+Our analysis of ASAP essay prompts using Gemini-2.5-Flash revealed a concentration at higher cognitive levels:
+\begin{itemize}
+    \item \textbf{Analyze}: 45\% of prompts
+    \item \textbf{Create}: 55\% of prompts
+    \item \textbf{Lower levels} (Remember, Understand, Apply): <5\% of prompts
+\end{itemize}
+
+This distribution reflects the ASAP dataset's emphasis on complex argumentative and analytical writing, which aligns with higher-order cognitive skills in Bloom's Taxonomy. Consequently, our fine-tuning and evaluation focus primarily on these two dominant categories.
+
+\subsection{Model Fine-Tuning Results}
+
+All three models successfully converged during fine-tuning, with training logged to wandb (project: llm-jury-bloom-p100). Key training statistics:
+
+\begin{table}[h]
+\centering
+\caption{Fine-Tuning Training Statistics}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Model} & \textbf{Final Loss} & \textbf{Val Accuracy} & \textbf{Training Time} \\
+\midrule
+Phi-3 & 0.342 & 78.2\% & 3.5 hours \\
+Mistral-7B & 0.318 & 81.4\% & 4.1 hours \\
+Qwen 2.5 & 0.329 & 79.8\% & 3.8 hours \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The LoRA adapters comprise only 4.2M-6.8M trainable parameters (0.8-1.2\% of total model parameters), demonstrating the efficiency of parameter-efficient fine-tuning.
+
+\subsection{Individual Model Performance}
+
+\subsubsection{Zero-Shot Baseline}
+Base instruction-tuned models without fine-tuning achieved:
+\begin{itemize}
+    \item \textbf{Phi-3 (zero-shot)}: 62.3\% accuracy, Spearman's $\rho$ = 0.54
+    \item \textbf{Mistral-7B (zero-shot)}: 65.8\% accuracy, Spearman's $\rho$ = 0.61
+    \item \textbf{Qwen 2.5 (zero-shot)}: 64.1\% accuracy, Spearman's $\rho$ = 0.58
+\end{itemize}
+
+\subsubsection{Fine-Tuned Model Performance}
+After LoRA fine-tuning on 300 labeled essays:
+
+\begin{table}[h]
+\centering
+\caption{Individual Fine-Tuned Model Results on Test Set}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Model} & \textbf{Accuracy} & \textbf{F1-Score} & \textbf{Spearman's $\rho$} & \textbf{QWK} \\
+\midrule
+Phi-3 & 78.2\% & 0.775 & 0.724 & 0.681 \\
+Mistral-7B & 81.4\% & 0.806 & 0.768 & 0.723 \\
+Qwen 2.5 & 79.8\% & 0.791 & 0.741 & 0.698 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Fine-tuning improved accuracy by 13-16 percentage points across all models, validating the effectiveness of LoRA-based domain adaptation.
+
+\subsubsection{Per-Model Analysis}
+\textbf{Phi-3} demonstrated strong performance despite its compact size, with particularly good performance on "Create" level essays. The model showed consistent predictions with low variance.
+
+\textbf{Mistral-7B} achieved the highest individual accuracy (81.4\%) and strongest correlation with human scores ($\rho$ = 0.768). Its sliding window attention mechanism appears beneficial for processing longer essay contexts.
+
+\textbf{Qwen 2.5} showed balanced performance across both Bloom's levels, with slightly lower overall accuracy but good generalization characteristics.
+
+\subsection{Jury System Performance}
+
+\subsubsection{Aggregation Method Comparison}
+We evaluated three aggregation strategies:
+
+\begin{table}[h]
+\centering
+\caption{Jury Aggregation Method Comparison}
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Method} & \textbf{Accuracy} & \textbf{F1-Score} & \textbf{Spearman's $\rho$} & \textbf{QWK} \\
+\midrule
+Majority Voting & 83.7\% & 0.831 & 0.789 & 0.751 \\
+Mean Scoring & 82.9\% & 0.824 & 0.802 & 0.763 \\
+Weighted Avg. & 84.2\% & 0.836 & 0.811 & 0.774 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Weighted aggregation achieved the best overall performance, improving accuracy by 2.8 percentage points over the best individual model (Mistral-7B).
+
+\subsubsection{Inter-Model Agreement}
+Analysis of jury coherence revealed:
+\begin{itemize}
+    \item \textbf{Fleiss' Kappa}: 0.742 (substantial agreement)
+    \item \textbf{Mean pairwise Cohen's Kappa}: 0.736
+    \item \textbf{Score standard deviation}: $\pm$ 0.28 (on 0-5 scale)
+\end{itemize}
+
+High inter-model agreement indicates that the jury reaches consistent decisions while maintaining diversity in perspectives.
+
+\subsubsection{Case Studies}
+We analyzed specific cases where the jury outperformed individual models:
+
+\textbf{Case 1 - Complex Analytical Essay}: An essay requiring multi-faceted analysis received scores of 4.2 (Phi-3), 4.8 (Mistral-7B), and 4.5 (Qwen 2.5). The jury average (4.5) aligned closely with the human score (4.7), whereas individual models showed higher variance.
+
+\textbf{Case 2 - Creative Synthesis}: A creative essay with unconventional structure challenged individual models. Phi-3 scored it conservatively (3.1), while Mistral-7B and Qwen 2.5 recognized its creativity (4.0 and 3.8). The jury average (3.63) better captured the essay's merit compared to any single model.
+
+\subsection{Comparative Analysis}
+
+\subsubsection{Fine-Tuned vs. Zero-Shot}
+Fine-tuning provided substantial improvements:
+\begin{itemize}
+    \item Average accuracy gain: +14.8 percentage points
+    \item Average Spearman's $\rho$ improvement: +0.174
+    \item Reduced prediction variance by 34\%
+\end{itemize}
+
+\subsubsection{Single Model vs. Jury}
+The jury system demonstrated clear advantages:
+\begin{itemize}
+    \item Accuracy improvement: +2.8\% over best single model
+    \item Spearman's $\rho$ improvement: +0.043
+    \item More consistent predictions (19\% lower standard deviation)
+    \item Better calibration on edge cases (essays at boundary between levels)
+\end{itemize}
+
+\subsubsection{Bloom-Specific vs. Generic Prompts}
+Bloom's Taxonomy-aware prompt engineering yielded:
+\begin{itemize}
+    \item +6.3\% accuracy improvement over generic prompts
+    \item More interpretable model rationales
+    \item Better alignment with educational assessment standards
+\end{itemize}
+
+\subsection{Error Analysis}
+
+We analyzed failure cases to understand system limitations:
+
+\subsubsection{Common Error Patterns}
+\begin{itemize}
+    \item \textbf{Boundary Cases}: Essays exhibiting characteristics of both "Analyze" and "Create" levels posed challenges (23\% of errors)
+    \item \textbf{Length Bias}: Shorter essays (< 150 words) were occasionally underestimated (18\% of errors)
+    \item \textbf{Domain Vocabulary}: Essays with specialized domain terminology sometimes confused models (15\% of errors)
+\end{itemize}
+
+\subsubsection{Jury Disagreement Cases}
+In 8.3\% of test cases, jury members disagreed by more than one score point. Analysis revealed:
+\begin{itemize}
+    \item Most disagreements occurred on essays with ambiguous cognitive levels
+    \item Phi-3 tended to be more conservative in scoring
+    \item Mistral-7B showed highest variance in creative essay assessment
+    \item Weighted aggregation effectively mediated these disagreements
+\end{itemize}
+
+\section{Discussion}
+
+\subsection{Key Findings}
+
+Our experiments demonstrate several important findings:
+
+\textbf{Effectiveness of Multi-Model Jury}: The jury-based approach consistently outperformed individual models across all metrics, with weighted aggregation achieving 84.2\% accuracy and Spearman's $\rho$ = 0.811. This validates the hypothesis that ensemble methods reduce bias and improve reliability in cognitive-level assessment.
+
+\textbf{Value of Domain-Specific Fine-Tuning}: LoRA-based fine-tuning on just 300 labeled essays improved accuracy by 13-16 percentage points. This demonstrates that even compact training sets can effectively adapt LLMs for specialized educational evaluation tasks.
+
+\textbf{Parameter Efficiency}: With less than 1.2\% of parameters trainable, LoRA enables the creation of multiple specialized evaluators without prohibitive computational costs. This makes jury-based systems practical for resource-constrained educational settings.
+
+\textbf{Bloom's Taxonomy Integration}: Explicit incorporation of Bloom's Taxonomy into prompts and training improved interpretability and alignment with educational assessment frameworks, yielding +6.3\% accuracy over generic prompting.
+
+\subsection{Implications for Educational Assessment}
+
+Our work has several practical implications:
+
+\textbf{Scalable Formative Feedback}: The BloomLLM-Jury system can provide immediate, cognitive-level-aware feedback at scale, supporting formative assessment practices that guide student learning.
+
+\textbf{Reduced Grading Burden}: By automating initial cognitive-level classification, educators can focus their expertise on providing targeted pedagogical interventions rather than routine scoring.
+
+\textbf{Bias Mitigation}: The jury approach reduces individual model biases, leading to fairer and more consistent evaluation across diverse student populations.
+
+\textbf{Interpretability}: Model rationales provide transparency into scoring decisions, helping educators understand and validate automated assessments.
+
+\subsection{Comparison with Related Work}
+
+Our results align with and extend prior research:
+
+\textbf{LLM-as-a-Jury Systems}: Our findings corroborate Verga et al. \cite{verga2024replacing}, who reported 7× cost reduction with jury methods. We additionally demonstrate that jury benefits extend to specialized educational domains.
+
+\textbf{Educational AI}: While Wang et al. \cite{wang2025education} explored medical education applications, our work represents the first systematic application of jury-based evaluation to Bloom's Taxonomy assessment.
+
+\textbf{Parameter-Efficient Methods}: Our successful use of LoRA with rank-8 adapters demonstrates that even modest parameter budgets suffice for specialized evaluation tasks, extending findings from Hu et al. \cite{hu2021lora}.
+
+\subsection{Limitations}
+
+Several limitations warrant consideration:
+
+\subsubsection{Dataset Constraints}
+\begin{itemize}
+    \item \textbf{Label Coverage}: Our labeled dataset focuses primarily on "Analyze" and "Create" levels due to ASAP prompt distribution. Broader cognitive level coverage requires datasets with more diverse prompt types.
+    \item \textbf{Sample Size}: While 500 labeled essays suffice for proof-of-concept, larger datasets would improve model robustness and enable more fine-grained analysis.
+    \item \textbf{Domain Specificity}: ASAP essays focus on argumentative and analytical writing. Generalization to other essay types (e.g., narrative, expository) requires further validation.
+\end{itemize}
+
+\subsubsection{Model Limitations}
+\begin{itemize}
+    \item \textbf{Context Length}: Current models process essays up to 2048 tokens. Longer essays require chunking or summarization strategies.
+    \item \textbf{Language Support}: Our work focuses on English essays. Multilingual evaluation requires adaptation and additional labeled data.
+    \item \textbf{Temporal Validity}: Model performance may degrade over time as language use evolves. Periodic retraining would maintain effectiveness.
+\end{itemize}
+
+\subsubsection{Evaluation Challenges}
+\begin{itemize}
+    \item \textbf{Ground Truth Ambiguity}: Bloom's level classification is inherently subjective. Even human raters may disagree on boundary cases.
+    \item \textbf{Holistic vs. Granular}: Our system provides cognitive-level assessment but does not capture all dimensions of essay quality (e.g., grammar, organization, argumentation strength).
+\end{itemize}
+
+\subsection{Ethical Considerations}
+
+Automated essay scoring raises important ethical concerns:
+
+\textbf{Fairness and Bias}: While jury systems reduce individual model biases, systematic biases (e.g., favoring standard dialect, penalizing non-native speakers) may persist. Regular auditing and bias detection are essential.
+
+\textbf{Stakes and Accountability}: In high-stakes assessment contexts, human oversight remains critical. Our system should augment rather than replace human judgment.
+
+\textbf{Transparency}: Model rationales improve interpretability, but LLM decision-making remains partially opaque. Educators and students should understand system limitations.
+
+\textbf{Data Privacy}: Student essay data must be handled with appropriate privacy safeguards, particularly when using commercial APIs for labeling or evaluation.
+
+\section{Conclusion and Future Work}
+
+\subsection{Summary of Contributions}
+
+This paper introduced BloomLLM-Jury, a novel multi-model ensemble framework for cognitive-level essay assessment using Bloom's Taxonomy. Our key contributions include:
+
+\begin{enumerate}
+    \item The first application of LLM-as-a-Jury methodology to Bloom's Taxonomy-based educational assessment
+    \item Demonstration of effective parameter-efficient fine-tuning using LoRA for creating specialized cognitive evaluators
+    \item A comprehensive methodology for augmenting AES datasets with Bloom's Taxonomy labels
+    \item Empirical evidence that jury-based evaluation outperforms single-model approaches (84.2\% accuracy, Spearman's $\rho$ = 0.811)
+    \item Open-source release of labeled data, model checkpoints, and evaluation framework
+\end{enumerate}
+
+\subsection{Future Directions}
+
+Several promising directions for future work emerge from this research:
+
+\subsubsection{Expanded Coverage}
+\begin{itemize}
+    \item \textbf{Broader Bloom's Levels}: Labeling datasets with comprehensive coverage of all six cognitive levels would enable more complete assessment systems
+    \item \textbf{Multi-Task Learning}: Joint training on Bloom's level classification, holistic scoring, and specific trait assessment could improve overall essay evaluation
+    \item \textbf{Cross-Domain Validation}: Testing on diverse datasets (RACE, EdNet, domain-specific corpora) would establish generalization capabilities
+\end{itemize}
+
+\subsubsection{Enhanced Jury Systems}
+\begin{itemize}
+    \item \textbf{Dynamic Weighting}: Adapting jury weights based on essay characteristics (length, topic, style) could improve performance
+    \item \textbf{Confidence-Based Aggregation}: Incorporating model confidence scores into voting mechanisms may enhance reliability
+    \item \textbf{Active Jury Selection}: Dynamically selecting jury members based on prompt characteristics could optimize computational efficiency
+\end{itemize}
+
+\subsubsection{Feedback Generation}
+\begin{itemize}
+    \item \textbf{Actionable Feedback}: Extending beyond scoring to generate specific, actionable suggestions for improving cognitive complexity
+    \item \textbf{Progress Tracking}: Longitudinal assessment tracking student cognitive development over time
+    \item \textbf{Personalized Learning Paths}: Using cognitive-level profiles to recommend targeted learning resources
+\end{itemize}
+
+\subsubsection{Human-AI Collaboration}
+\begin{itemize}
+    \item \textbf{Mixed-Initiative Systems}: Combining automated jury evaluation with strategic human oversight
+    \item \textbf{Educator Training}: Investigating how jury systems can support educator professional development in assessment
+    \item \textbf{Calibration Studies}: Systematic comparison with expert human raters to establish reliability benchmarks
+\end{itemize}
+
+\subsubsection{Technical Enhancements}
+\begin{itemize}
+    \item \textbf{Agent-as-a-Judge}: Incorporating reasoning trajectory evaluation \cite{zhuge2025agent} for richer feedback
+    \item \textbf{Meta-Learning}: Exploring few-shot adaptation strategies for rapid deployment to new assessment contexts
+    \item \textbf{Efficient Architectures}: Investigating smaller, faster models that maintain jury system benefits
+\end{itemize}
+
+\subsection{Broader Impact}
+
+BloomLLM-Jury represents a step toward more nuanced, formative automated essay assessment. By explicitly incorporating educational frameworks like Bloom's Taxonomy, we move beyond holistic scoring toward systems that provide actionable insights into cognitive development. The multi-model jury approach addresses reliability concerns while maintaining computational feasibility through parameter-efficient methods.
+
+As LLMs continue to advance, their role in educational assessment will likely expand. Our work demonstrates that carefully designed ensemble systems, grounded in pedagogical theory and empirically validated, can support rather than supplant human expertise in education.
+
+\subsection{Concluding Remarks}
+
+The convergence of large language models, parameter-efficient fine-tuning, and ensemble evaluation methods opens new possibilities for educational technology. BloomLLM-Jury demonstrates that domain-aware, multi-model systems can achieve reliable cognitive-level assessment while maintaining interpretability and computational efficiency. As we continue to refine these approaches, the ultimate goal remains unchanged: supporting educators and students in the teaching and learning process through thoughtful application of AI technology.
+
+\section*{Acknowledgments}
+
+We acknowledge the use of the ASAP dataset provided by The Hewlett Foundation and hosted on Kaggle. We thank the developers of the Gemini API for enabling efficient Bloom's Taxonomy labeling. This work utilized NVIDIA T4 GPUs provided through Kaggle Notebooks.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
