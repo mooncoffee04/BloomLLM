@@ -1,0 +1,102 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            otb40ls6o6tvmh5hdwhlrdmk97eszu4l:
+                cpu_count: 2
+                cpu_count_logical: 4
+                cudaVersion: "12.6"
+                disk:
+                    /:
+                        total: "8656922775552"
+                        used: "7031532896256"
+                email: mishralaavanya@gmail.com
+                executable: /usr/bin/python3
+                gpu: Tesla T4
+                gpu_count: 2
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 2560
+                      memoryTotal: "16106127360"
+                      name: Tesla T4
+                      uuid: GPU-861b4d9e-ef21-b0d2-1d64-f1662b732e2b
+                    - architecture: Turing
+                      cudaCores: 2560
+                      memoryTotal: "16106127360"
+                      name: Tesla T4
+                      uuid: GPU-e356c5b6-c62d-55a9-7fec-4d332a419c2a
+                host: b20edb59f581
+                memory:
+                    total: "33662332928"
+                os: Linux-6.6.56+-x86_64-with-glibc2.35
+                program: kaggle.ipynb
+                python: CPython 3.11.13
+                root: /kaggle/working
+                startedAt: "2025-11-03T22:31:35.227872Z"
+                writerId: otb40ls6o6tvmh5hdwhlrdmk97eszu4l
+        m: []
+        python_version: 3.11.13
+        t:
+            "1":
+                - 1
+                - 2
+                - 3
+                - 5
+                - 11
+                - 12
+                - 41
+                - 49
+                - 51
+                - 53
+                - 63
+                - 71
+                - 98
+                - 105
+            "2":
+                - 1
+                - 2
+                - 3
+                - 5
+                - 11
+                - 12
+                - 41
+                - 49
+                - 51
+                - 53
+                - 63
+                - 71
+                - 98
+                - 105
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.11.13
+            "5": 0.21.0
+            "6": 4.53.3
+            "8":
+                - 1
+                - 2
+                - 12
+            "12": 0.21.0
+            "13": linux-x86_64
+batch_size:
+    value: 1
+dataset:
+    value: ASAP-AES-500
+grad_accum:
+    value: 16
+lora_alpha:
+    value: 8
+lora_r:
+    value: 4
+lr:
+    value: 0.0002
+max_length:
+    value: 256
+model:
+    value: mistralai/Mistral-7B-Instruct-v0.3
+steps:
+    value: 300
+train_size:
+    value: 300

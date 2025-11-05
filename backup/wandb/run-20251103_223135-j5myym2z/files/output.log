@@ -1,0 +1,12 @@
+Loading model in 4-bit...
+
+✗ Error training mistralai/Mistral-7B-Instruct-v0.3: You can't pass `load_in_4bit`or `load_in_8bit` as a kwarg when passing `quantization_config` argument at the same time.
+
+
+############################################################
+MODEL 3/3: deepseek-ai/DeepSeek-Coder-6.7B-instruct
+############################################################
+
+============================================================
+Fine-tuning deepseek-ai/DeepSeek-Coder-6.7B-instruct...
+============================================================

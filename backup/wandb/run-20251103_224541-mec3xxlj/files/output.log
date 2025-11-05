@@ -1,0 +1,23 @@
+Loading model in 4-bit...
+Preparing model for LoRA...
+
+✗ Error training Qwen/Qwen2.5-7B-Instruct: CUDA out of memory. Tried to allocate 2.03 GiB. GPU 0 has a total capacity of 14.74 GiB of which 1.46 GiB is free. Process 90881 has 13.28 GiB memory in use. Of the allocated memory 12.67 GiB is allocated by PyTorch, and 184.33 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/tmp/ipykernel_1270/1842124845.py", line 191, in <cell line: 0>
+    finetune_model(model_id, out_dir)
+  File "/tmp/ipykernel_1270/1842124845.py", line 71, in finetune_model
+    model = prepare_model_for_kbit_training(model, use_gradient_checkpointing=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/peft/utils/other.py", line 149, in prepare_model_for_kbit_training
+    param.data = param.data.to(torch.float32)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.03 GiB. GPU 0 has a total capacity of 14.74 GiB of which 1.46 GiB is free. Process 90881 has 13.28 GiB memory in use. Of the allocated memory 12.67 GiB is allocated by PyTorch, and 184.33 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+
+############################################################
+MODEL 2/3: mistralai/Mistral-7B-Instruct-v0.3
+############################################################
+
+============================================================
+Fine-tuning mistralai/Mistral-7B-Instruct-v0.3...
+============================================================

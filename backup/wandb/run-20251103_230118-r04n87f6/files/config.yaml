@@ -1,0 +1,93 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            8p042vgvr9ycyap5rx50f2wabq3to293:
+                cpu_count: 2
+                cpu_count_logical: 4
+                cudaVersion: "12.6"
+                disk:
+                    /:
+                        total: "8656922775552"
+                        used: "6996312461312"
+                email: mishralaavanya@gmail.com
+                executable: /usr/bin/python3
+                gpu: Tesla P100-PCIE-16GB
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Pascal
+                      cudaCores: 3584
+                      memoryTotal: "17179869184"
+                      name: Tesla P100-PCIE-16GB
+                      uuid: GPU-4a81ad90-94a0-8c07-8068-ad4a9dc7a43c
+                host: d9fcd5d2e701
+                memory:
+                    total: "33662332928"
+                os: Linux-6.6.56+-x86_64-with-glibc2.35
+                program: kaggle.ipynb
+                python: CPython 3.11.13
+                root: /kaggle/working
+                startedAt: "2025-11-03T23:01:18.410027Z"
+                writerId: 8p042vgvr9ycyap5rx50f2wabq3to293
+        m: []
+        python_version: 3.11.13
+        t:
+            "1":
+                - 1
+                - 2
+                - 3
+                - 5
+                - 11
+                - 12
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 98
+                - 105
+            "2":
+                - 1
+                - 2
+                - 3
+                - 5
+                - 11
+                - 12
+                - 41
+                - 49
+                - 51
+                - 53
+                - 71
+                - 98
+                - 105
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.11.13
+            "5": 0.21.0
+            "6": 4.53.3
+            "8":
+                - 1
+                - 2
+                - 12
+            "12": 0.21.0
+            "13": linux-x86_64
+batch_size:
+    value: 4
+gpu:
+    value: P100
+grad_accum:
+    value: 4
+lora_alpha:
+    value: 16
+lora_r:
+    value: 8
+max_length:
+    value: 512
+model:
+    value: mistralai/Mistral-7B-Instruct-v0.3
+steps:
+    value: 300
+train_size:
+    value: 300

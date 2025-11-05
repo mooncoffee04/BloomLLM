@@ -1,0 +1,27 @@
+Loading model in 4-bit...
+
+✗ Error training deepseek-ai/DeepSeek-Coder-6.7B-instruct: You can't pass `load_in_4bit`or `load_in_8bit` as a kwarg when passing `quantization_config` argument at the same time.
+
+
+============================================================
+FINE-TUNING COMPLETE!
+============================================================
+
+============================================================
+STARTING FINE-TUNING PIPELINE (Fixed Quantization)
+============================================================
+Training on 300 samples
+Models to train: 3
+Effective batch size: 16 (1 × 16 grad accumulation)
+Max sequence length: 256 tokens
+LoRA rank: 4, alpha: 8
+============================================================
+
+
+############################################################
+MODEL 1/3: Qwen/Qwen2.5-7B-Instruct
+############################################################
+
+============================================================
+Fine-tuning Qwen/Qwen2.5-7B-Instruct...
+============================================================

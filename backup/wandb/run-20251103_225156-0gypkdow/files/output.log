@@ -1,0 +1,19 @@
+Loading model...
+Applying LoRA...
+trainable params: 6,815,744 || all params: 7,254,839,296 || trainable%: 0.0939
+Trainable params: None
+Tokenizing...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+
+============================================================
+Training...
+============================================================
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+✗ Error: CUDA out of memory. Tried to allocate 28.00 MiB. GPU 0 has a total capacity of 14.74 GiB of which 28.12 MiB is free. Process 93489 has 14.71 GiB memory in use. Of the allocated memory 14.25 GiB is allocated by PyTorch, and 27.62 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+
+============================================================
+Fine-tuning microsoft/Phi-3-mini-4k-instruct on GPU 1
+============================================================
+GPU: Tesla T4
+Free memory: 14.74 GB

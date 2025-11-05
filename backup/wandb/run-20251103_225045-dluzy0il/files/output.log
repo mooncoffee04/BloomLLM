@@ -1,0 +1,68 @@
+Loading model in 4-bit...
+
+============================================================
+GPU PROCESS CHECK
+============================================================
+Mon Nov  3 22:51:21 2025
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |
+| N/A   67C    P0             30W /   70W |   11591MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |
+| N/A   60C    P0             29W /   70W |     103MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
++-----------------------------------------------------------------------------------------+
+
+
+PyTorch GPU Memory:
+GPU 0:
+  Total: 14.74 GB
+  Allocated: 7.93 GB
+  Reserved: 10.88 GB
+  Free: 6.81 GB
+GPU 1:
+  Total: 14.74 GB
+  Allocated: 0.00 GB
+  Reserved: 0.00 GB
+  Free: 14.74 GB
+
+============================================================
+TENSORS ON GPU
+============================================================
+  Tensor: torch.Size([32768, 4096]), torch.bfloat16, 256.00 MB
+  Tensor: torch.Size([4096]), torch.bfloat16, 0.01 MB
+  Tensor: torch.Size([29360128, 1]), torch.uint8, 28.00 MB
+  Tensor: torch.Size([29360128, 1]), torch.uint8, 28.00 MB
+  Tensor: torch.Size([29360128, 1]), torch.uint8, 28.00 MB
+  Tensor: torch.Size([4096]), torch.bfloat16, 0.01 MB
+  Tensor: torch.Size([2097152, 1]), torch.uint8, 2.00 MB
+  Tensor: torch.Size([8388608, 1]), torch.uint8, 8.00 MB
+  Tensor: torch.Size([8388608, 1]), torch.uint8, 8.00 MB
+  Tensor: torch.Size([2097152, 1]), torch.uint8, 2.00 MB
+/usr/local/lib/python3.11/dist-packages/torch/__init__.py:1113: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  return isinstance(obj, torch.Tensor)
+
+Total GPU tensors: 636
+Total size: 8.02 GB
+
+🚀 Training on GPU 1 (15GB free)
+
+============================================================
+Fine-tuning mistralai/Mistral-7B-Instruct-v0.3 on GPU 1
+============================================================
+GPU: Tesla T4
+Free memory: 14.74 GB

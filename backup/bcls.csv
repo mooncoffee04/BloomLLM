@@ -1,0 +1,601 @@
+question_id,bloom_level,question
+KNO_001,Knowledge,About what proportion of the population of the US is living on farms?
+KNO_002,Knowledge,Correctly label the brain lobes indicated on the diagram below
+KNO_003,Knowledge,Define compound interest.
+KNO_004,Knowledge,Define four types of traceability.
+KNO_005,Knowledge,Define mercantilism.
+KNO_006,Knowledge,"Define stream bank, floodplain and substrate."
+KNO_007,Knowledge,Define the meaning of the Olympic Motto.
+KNO_008,Knowledge,Draw and label a diagram of a typical stream.
+KNO_009,Knowledge,Draw the basic outline of a page of notes using the Cornell Method?
+KNO_010,Knowledge,Draw the block diagram of the central processing unit
+KNO_011,Knowledge,Draw the flow chart of the PNK system
+KNO_012,Knowledge,How many instructions in the instruction set of RISC computer?
+KNO_013,Knowledge,How many kilometers from your home to the university
+KNO_014,Knowledge,How many loop statement available in c++?
+KNO_015,Knowledge,How many states are there in USA
+KNO_016,Knowledge,How many years does this animal live?
+KNO_017,Knowledge,How much data can be stored in the cach memory
+KNO_018,Knowledge,How much did he pay for his car
+KNO_019,Knowledge,How much is your weight
+KNO_020,Knowledge,How much time did he took to build a house
+KNO_021,Knowledge,How much water does an elephant drink
+KNO_022,Knowledge,Identify a phrase as a simile
+KNO_023,Knowledge,"Identify a property (commutative, additive, etc("
+KNO_024,Knowledge,Identify fractions from a pictorial representation
+KNO_025,Knowledge,Identify ordinal positions
+KNO_026,Knowledge,Identify the correct definition of osmosis.
+KNO_027,Knowledge,Identify the five major prophets of the Old Testament.
+KNO_028,Knowledge,Identify the part of a eukaryotic cell.
+KNO_029,Knowledge,Identify the standard peripheral components of a computer.
+KNO_030,Knowledge,Identify which word begins with the same sound as the s in sun (Knowledge of letter s)
+KNO_031,Knowledge,in which continent does the state of suriname fall
+KNO_032,Knowledge,in which countries is arabic language spoken
+KNO_033,Knowledge,In Which part of the world does he live
+KNO_034,Knowledge,Label any Olympic sporting apparatus with design features.
+KNO_035,Knowledge,Label the parts of the following insects: Grasshopper
+KNO_036,Knowledge,Label the parts of the microscope shown on the right
+KNO_037,Knowledge,List four types of clauses mentioned in the article
+KNO_038,Knowledge,List reserved words in C programming.
+KNO_039,Knowledge,List the characteristics peculiar to the Cubist movement.
+KNO_040,Knowledge,List the levels in Bloom's Taxonomy.
+KNO_041,Knowledge,List the procedure to draw a mixed potential or Evans' diagram
+KNO_042,Knowledge,List the steps involved in titration.
+KNO_043,Knowledge,List three characteristics that are unique to the Cubist movement.
+KNO_044,Knowledge,List three predominant economic systems that exist
+KNO_045,Knowledge,Look at the symbol. What is the symbol’s purpose on a map?
+KNO_046,Knowledge,Make a list of facts you learned from the story.
+KNO_047,Knowledge,Name 5 steps that follow the taking of notes (within 24 hours or less)?
+KNO_048,Knowledge,Name the artist who painted the Mona Lisa.
+KNO_049,Knowledge,Name the food groups and at least two items of food in each group.
+KNO_050,Knowledge,Name the four major food groups.
+KNO_051,Knowledge,Name the main characters in the story.
+KNO_052,Knowledge,Name the property that states that
+KNO_053,Knowledge,Please label the diagram below:
+KNO_054,Knowledge,Recall basic math facts
+KNO_055,Knowledge,Recall locations of a historical events
+KNO_056,Knowledge,Recall the definition of the formula datatype from your assignment 2.
+KNO_057,Knowledge,Recall the equation for the Ideal Gas Law.
+KNO_058,Knowledge,Recall the following pictoral example of an implementation of some queue operations
+KNO_059,Knowledge,recall the supply voltage constraints
+KNO_060,Knowledge,Recite a policy of immigration in Europe .
+KNO_061,Knowledge,"Recite the poem ""Auto Wreck""."
+KNO_062,Knowledge,Recite the principles of the Data Protection Act.
+KNO_063,Knowledge,Recite the the Gaussian law
+KNO_064,Knowledge,State four attributes of well engineered software.
+KNO_065,Knowledge,State how to find a word in a dictionary
+KNO_066,Knowledge,State the characteristics of each type of corrosion testing studied
+KNO_067,Knowledge,State the definition of application in Bloom's Taxonomy.
+KNO_068,Knowledge,State the formula for the area of a circle
+KNO_069,Knowledge,State the guidelines to design an anodic protection system
+KNO_070,Knowledge,State the pattern for expressing time in French.
+KNO_071,Knowledge,State the rule for balls and strikes in baseball.
+KNO_072,Knowledge,State the rule for using a semicolon in a sentence.
+KNO_073,Knowledge,What are major facts about particular cultures and societies
+KNO_074,Knowledge,What are the major products and exports of countries
+KNO_075,Knowledge,What are the representational symbols on maps and charts
+KNO_076,Knowledge,What are the structure or functions of Congress
+KNO_077,Knowledge,What are the units of corrosion penetration rates? Relate these to Faraday's law
+KNO_078,Knowledge,What does ICT stands for.
+KNO_079,Knowledge,What is  your family name
+KNO_080,Knowledge,What is a global variable?
+KNO_081,Knowledge,What is a textual index
+KNO_082,Knowledge,What is the setting of To Kill a Mockingbird?
+KNO_083,Knowledge,What is the title of the first movie you saw
+KNO_084,Knowledge,What season are we in right now?
+KNO_085,Knowledge,when did saudi arabia start using internet
+KNO_086,Knowledge,when did the first saudi radio station open
+KNO_087,Knowledge,When did the second world war happen
+KNO_088,Knowledge,When did you born ?
+KNO_089,Knowledge,when was the first airport in the yemen built
+KNO_090,Knowledge,when was the UN formed
+KNO_091,Knowledge,Which of the following is the method for determining the volume of a cylinder?
+KNO_092,Knowledge,Which of the following item does not belong to the set ?
+KNO_093,Knowledge,Which of the two liquids is hypotonic
+KNO_094,Knowledge,which part of a data packet is used by a router to determine the destination network
+KNO_095,Knowledge,Which technology is used by laser printer
+KNO_096,Knowledge,Who is the first president   of USA
+KNO_097,Knowledge,who is the founder of the kingdom of saudi Arabia
+KNO_098,Knowledge,who was the first man on the moon
+KNO_099,Knowledge,who was the first to compose in the arts of makamat
+KNO_100,Knowledge,Who was the writer of the Hamilton
+COM_001,Comprehension,Compare Calliope with Howie. Use the word bank.
+COM_002,Comprehension,Compare historical events to contemporary situations
+COM_003,Comprehension,Complete an analogy (analogy tasks are inference tasks)
+COM_004,Comprehension,Describe 4 types of coupling in software design.
+COM_005,Comprehension,Describe how Phillip and Timothy survived on the Cay.
+COM_006,Comprehension,Describe in prose what is shown in graph form.
+COM_007,Comprehension,Describe in your own words how to borrow a book from the library.
+COM_008,Comprehension,Describe in your own words how to copy text from one program into another.
+COM_009,Comprehension,Describe in your own words what happens when a stream's velocity slows.
+COM_010,Comprehension,Describe in your own words what is meant by a sprained ankle.
+COM_011,Comprehension,Describe nuclear transport to a lay person.
+COM_012,Comprehension,Describe the Pareto Principle in statistical software quality assurance.
+COM_013,Comprehension,Describe what goes in each of the four areas on the first page of notes
+COM_014,Comprehension,Describe what took place as the Hato was sinking.
+COM_015,Comprehension,Describe how the linear polarization method can yield corrosion rates
+COM_016,Comprehension,Describe the major clinical differences between visceral and somatic pain
+COM_017,Comprehension,Briefly describe the author's approach to the liabilities of the GOTO statement
+COM_018,Comprehension,Describe what happened at...?
+COM_019,Comprehension,Determine the author’s point of view
+COM_020,Comprehension,Determine the next number in a sequence
+COM_021,Comprehension,Discuss the nature of socialism.
+COM_022,Comprehension,Explain how Timothy saved Phillip's life.
+COM_023,Comprehension,Explain in one's own words how to create a query in a database.
+COM_024,Comprehension,Explain in your own words what a recessive gene is.
+COM_025,Comprehension,Explain in your own words what do you mean by the term economics?
+COM_026,Comprehension,Explain in your own words what is meant by mercantilism.
+COM_027,Comprehension,Explain the causes of historical events
+COM_028,Comprehension,Explain the communicative property.
+COM_029,Comprehension,"Explain the double meaning the author attributes to the term ""successive action descriptions"""
+COM_030,Comprehension,Explain the possible uses described in class for the space to the left of the vertical line.
+COM_031,Comprehension,Explain the process (paraphrase) for finding the perimeter of a rectangular garden
+COM_032,Comprehension,Explain what a poem means.
+COM_033,Comprehension,"Explain what the author means by the statement ""our intellectual powers are geared to master static relations."
+COM_034,Comprehension,Express your opinion of 'Drugs in Sport' through poetry.
+COM_035,Comprehension,From a blueprint to describe the article depicted.
+COM_036,Comprehension,"Given a graph of production trends in automobiles, describe what the graph represents in a memo to your boss."
+COM_037,Comprehension,"Given these five corrosion inhibitors, V, W, X, Y, Z, identify which are passivators"
+COM_038,Comprehension,"Illustrate this caption: ""Olympic as a Media Event in the Information Society"""
+COM_039,Comprehension,Illustrate what you think the main idea was.
+COM_040,Comprehension,In one sentence explain the main idea of a written passage.
+COM_041,Comprehension,In one sentence illustrate the main point of a written passage.
+COM_042,Comprehension,Interpret the pictures.
+COM_043,Comprehension,Outline in your own words how the Leggo's Tomato Paste advertisement sells their product.
+COM_044,Comprehension,Outline the most important insight of the tale.
+COM_045,Comprehension,Outline the mechanisms employed by bacteria allowing them to evade phagocytic destruction.
+COM_046,Comprehension,"Outline an ""attack plan"" that will allow you to test your hypothesis using computational molecular modeling tools"
+COM_047,Comprehension,Paraphrase an important speech
+COM_048,Comprehension,Paraphrase what Hamlet is saying in his soliloquy.
+COM_049,Comprehension,Paraphrase the poem in your own words
+COM_050,Comprehension,"Paraphrase this poem about Sheik Schubli, explaining what he was saying about the characteristics of a friend"
+COM_051,Comprehension,Describe the output of this program fragment:
+COM_052,Comprehension,Classify types of corrosion inhibitors
+COM_053,Comprehension,would you classify the zener diode in this circuit as a series voltage regulator or a shunt voltage regulator
+COM_054,Comprehension,"Classify the following protocols: IP, TCP, HTTP according to the ISO OSI classification"
+COM_055,Comprehension,"Classify the following substances as particle, atom, element, molecule, compound"
+COM_056,Comprehension,How would you classify the geographic location of your school
+COM_057,Comprehension,Classify animals into two groups.
+COM_058,Comprehension,Classify celebrations into family and community categories.
+COM_059,Comprehension,Classify frogs toads and other amphibians.
+COM_060,Comprehension,Restate main idea of story in own words.
+COM_061,Comprehension,Restate the Olympic motto in your own words.
+COM_062,Comprehension,Retell the story in your words.
+COM_063,Comprehension,Rewrite the principles of test writing.
+COM_064,Comprehension,Rewrite you predicted equation for the ideal gas law
+COM_065,Comprehension,Rewrite the markov matrix to account for this slight change.
+COM_066,Comprehension,"Rewrite the sentence in your head, following the direction given below"
+COM_067,Comprehension,Rewrite a part in the poem using a different speaker
+COM_068,Comprehension,Select the best title for a passage
+COM_069,Comprehension,State in your own words the rule for balls and strikes in baseball.
+COM_070,Comprehension,State in your own words where in the library to find previous issues of journals that are no longer in the display racks.
+COM_071,Comprehension,Can you state in your own words what the problem is asking you to do
+COM_072,Comprehension,State in your own words what the author means when he says
+COM_073,Comprehension,Summarize a historical document
+COM_074,Comprehension,Summarize a story in own words.
+COM_075,Comprehension,Summarize Jem’s beliefs about Boo Radley
+COM_076,Comprehension,Summarize the basic tenets of collaborative conservation.
+COM_077,Comprehension,Summarize the basic tenets of deconstructionism.
+COM_078,Comprehension,Summarize this magazine article.
+COM_079,Comprehension,Tell how Phillip kept himself alive after Timothy died.
+COM_080,Comprehension,Tell in your own words how the setting of the story made it more interesting.
+COM_081,Comprehension,Tell in your own words the beginning of the book.
+COM_082,Comprehension,"In your own words, tell what is meant by the definition of an isosceles triangle."
+COM_083,Comprehension,"In your own words, how would you define transferable skills"
+COM_084,Comprehension,Translate a written text aloud from L2 to English.
+COM_085,Comprehension,Translate an equation into a computer spreadsheet.
+COM_086,Comprehension,Translate an equation into a spreadsheet formula.
+COM_087,Comprehension,Translate the following passage from The Iliad into English.
+COM_088,Comprehension,Use the E-pH or Pourbaix diagram of Cr to determine the control current and potential for the anodic protection of a S43000 stainless steel vessel.
+COM_089,Comprehension,"Compare and contrast two treatments of either drapery or animals by Greek sculptors, establishing their artistic contexts"
+COM_090,Comprehension,"Briefly compare this way of testing the satisfiability of to the more standard way using SLD Resolution, as in Prolog"
+COM_091,Comprehension,How would you compare SAS with the Visual Basic Application and SPSS for the processing and analysis of mainframe data
+COM_092,Comprehension,Describe and compare the role of Islamic law in the legal systems of Malaysia and Pakistan
+COM_093,Comprehension,Express the rule in function notation
+COM_094,Comprehension,Express the following systems in matrix form
+COM_095,Comprehension,Express the following percentages as fractions in simplest form
+COM_096,Comprehension,Explain the whole method of crushing
+COM_097,Comprehension,"In your own words, how would you summarize the story up"
+COM_098,Comprehension,Summarize the main point of these two texts in your own words
+COM_099,Comprehension,Outline the aim of two studies within the
+COM_100,Comprehension,Outline your experience in working with service users
+APP_001,Application,Apply laws of statistics to evaluate the reliability of a written test.
+APP_002,Application,Apply shading to produce depth in drawing.
+APP_003,Application,Apply the rule of law to a new situation
+APP_004,Application,Apply the storytelling technique here to a little story of your own.
+APP_005,Application,Apply your understanding the Olympic spirit to develop a new motto or slogan.
+APP_006,Application,Show the value of x after running this program fragment
+APP_007,Application,Calculate for x in the following equation: 12x=36
+APP_008,Application,Calculate the deflection of a beam under uniform loading.
+APP_009,Application,Calculate the number of sacrificial anodes that would be required to form a calcareous deposit on a steel pile immersed in seawater.
+APP_010,Application,Calculate the rate of habitat fragmentation within the Colorado Front Range in the last decade.
+APP_011,Application,Can you apply the method used to some experience of your own . . .?
+APP_012,Application,Can you group by characteristics such as . . .?
+APP_013,Application,Categorise the pictures and add them to the wall display.
+APP_014,Application,Choose a country that does not compete at the Olympics and explain why that country is not an Olympic member.
+APP_015,Application,Choose any U.S. president and explain how he exercised his power as Commander in Chief of the Armed Forces.
+APP_016,Application,Compute the area of actual circles.
+APP_017,Application,Compute the volume of a cylinder
+APP_018,Application,Construct a model to demonstrate how it will work.
+APP_019,Application,Demonstrate how the seasons occur.
+APP_020,Application,Demonstrate how this could work in an industry setting?
+APP_021,Application,Demonstrate using the OPAC and your knowledge of library organization to find a book about turtles.
+APP_022,Application,Demonstrate how your unit’s specific student learning outcomes are linked to the mission of UAM.
+APP_023,Application,Derive a kinetic model from experimental data.
+APP_024,Application,Describe an experiment to answer the question of the effects of weight on the fall of an object.
+APP_025,Application,Construct a market strategy for your product using a known strategy as a model.
+APP_026,Application,Construct a simple payroll program that computes net pay for those working 40 hours or less and net pay for those working over 40 hours.
+APP_027,Application,"Draw 3 pictures showing the beginning, middle and ending of the story."
+APP_028,Application,Draw a picture of the bears' house.
+APP_029,Application,Draw a picture of the gown Cinderella wore to the ball.
+APP_030,Application,"From the information given, can you develop a set of instructions about . . .?"
+APP_031,Application,How could someone modify the Cornell Method to make it effective for researching a topic for a paper?
+APP_032,Application,How might lifestyles in the United States be modified if a more socialistic system were adopted?
+APP_033,Application,"If notes are available on the professor’s website, how should those notes be used?"
+APP_034,Application,"In a teaching simulation with your peers role-playing 6th grade students, demonstrate the principle of reinforcement in classroom interactions and prepare a half page description of what happened during the simulation that validated the principle."
+APP_035,Application,Make a diorama to illustrate an important event.
+APP_036,Application,Make a paper-mache map to include relevant information about an event.
+APP_037,Application,Make a scrapbook about the areas of study.
+APP_038,Application,Make up a puzzle game using the ideas from the study area.
+APP_039,Application,Model an Olympic Village for the new Millenium.
+APP_040,Application,Participate in a mock election
+APP_041,Application,Predict what happens to X if Y increases.
+APP_042,Application,Pretend you are one of the characters in the book. Write a diary about the happenings in your life for two consecutive days.
+APP_043,Application,Relate the principle of reinforcement to classroom interactions.
+APP_044,Application,Relate topographic map to field features
+APP_045,Application,Relate your most powerful story where your use of technology in the classroom has yielded a significant outcome with a student or students
+APP_046,Application,How would you relate position concept with position strategy
+APP_047,Application,"Show, through role-play, the final scene in the novel."
+APP_048,Application,Solve a math problem using familiar procedure or formula
+APP_049,Application,Solve for the ten following fraction multiplication problems. Please make sure to show all your work.
+APP_050,Application,Would you solve these two problems using similar approaches
+APP_051,Application,Use Laplace to solve the following problems
+APP_052,Application,Can you solve the following problem
+APP_053,Application,How to specify the impact energy and impact test temperature of the material in the Code
+APP_054,Application,Specify the thickness of a galvanized coating based on atmospheric data? (level 2)
+APP_055,Application,Specify the thickness of a galvanized coating based on atmospheric data? (level 2)
+APP_056,Application,How does one specify the syntactical restrictions
+APP_057,Application,Specify a deterministic finite automaton (DFA) recognizing the
+APP_058,Application,Take a collection of photographs to demonstrate a particular point.
+APP_059,Application,Use a costing model to compute prices on goods to maximise profits and minimise costs.
+APP_060,Application,Use a manual to calculate an employee's vacation time.
+APP_061,Application,Use the distance travelled and cost of petrol to calculate the cost of a coach trip using a spreadsheet.
+APP_062,Application,Use the rule for a semicolon in a sentence.
+APP_063,Application,What factors would you change if . . .?
+APP_064,Application,What questions would you ask if . . .?
+APP_065,Application,Who can use what we know about sonnets and finish this poem?
+APP_066,Application,Would this information be useful if you had a . . .?
+APP_067,Application,Sketch a prediction of the field lines for the arrangement of electrodes shown in Figure 2
+APP_068,Application,Sketch the blackbody curves for radiation emitted from the Sun and the Earth
+APP_069,Application,Sketch a typical absorption process in a packed column with regeneration in form of
+APP_070,Application,sketch a graph of velocity versus time for the upward and downward parts of a ball’s flight
+APP_071,Application,How do teenagers use code in emails and instant messages?
+APP_072,Application,Use the second-derivative test to determine whether critical points where f0(x) = 0 yield relative maxima or relative minima
+APP_073,Application,Use the unification algorithm to determine whether the following two terms are uni_able. Show intermediate step
+APP_074,Application,Use tableau methods to prove that the following tableau is valid.
+APP_075,Application,Use a sketch too find the exact value of each expression
+APP_076,Application,Use Gauss’ Law to find the electric field between the plates when the charge on them is Q
+APP_077,Application,What happens if you restrict a determinental process to a subset R  S?
+APP_078,Application,What would happen if the rainfall doubled in your state next year
+APP_079,Application,What happens if you change the direction of the displacement (but not its size)?
+APP_080,Application,What would you do if a heavy growth of bacteria had occurred
+APP_081,Application,What would result if …
+APP_082,Application,What approach would you use to prove the truth of the below statement
+APP_083,Application,Construct one Turing Machine for computing each of the following functions
+APP_084,Application,Construct a Venn diagram to determine the validity of the given argument.
+APP_085,Application,Construct a dictionary and a truth table to determine if the following statements are logically equivalent
+APP_086,Application,"How can we construct H given I, B and E?"
+APP_087,Application,Construct a family of networks to demonstrate that the number of different mincuts in a network can be exponential in the size of the network
+APP_088,Application,How do you construct foliations on a given manifold M?
+APP_089,Application,How to Construct the Optimal Maintenance Problem
+APP_090,Application,How to construct simple solutions when problems are complex?
+APP_091,Application,Construct the 4-Bit Ripple carry Adder Circuit
+APP_092,Application,Construct an analog circuit with the following specifications
+APP_093,Application,Construct the Data Path of the RISC Processor given in the previous question
+APP_094,Application,How do we construct agents that can deliver. “good” assistance
+APP_095,Application,How to construct the selected information system
+APP_096,Application,Show how they have used creative writing strategies appropriate to the format
+APP_097,Application,Show how to modify Fitch's algorithm given in class today to accommodate non-binary
+APP_098,Application,Show how E-CRM can be used to improve marketing positioning as explained in the article
+APP_099,Application,How would you show your understanding of the ABC process
+APP_100,Application,Show me how you would check the brake lights are working on this car
+ANA_001,Analysis,Analyze safe and dangerous aspects of these features.
+ANA_002,Analysis,Analyze the characteristics of frogs.
+ANA_003,Analysis,Analyze the movements and sounds of a frog.
+ANA_004,Analysis,"Analyze the problem, identifying its variables."
+ANA_005,Analysis,Break down the components of a standard film camera and explain how they interact to make the machine work.
+ANA_006,Analysis,Break down the main actions of the story.
+ANA_007,Analysis,"By comparing the map of the tectonic plates to the earthquake map, what inferences can you make?"
+ANA_008,Analysis,Can you compare your . . . with that presented in . . .?
+ANA_009,Analysis,Can you distinguish between . . .?
+ANA_010,Analysis,Can you explain what must have happened when . . .?
+ANA_011,Analysis,Can you find four different feelings Pa Lia had during the story?
+ANA_012,Analysis,Compare and contrast animals that the class has made.
+ANA_013,Analysis,Compare and contrast our school to other communities.
+ANA_014,Analysis,"Compare and contrast preview questions, clarifying questions and anticipated exam questions, including how each relates to the notetaking process?"
+ANA_015,Analysis,Compare and contrast the waterfall model with the prototyping model.
+ANA_016,Analysis,Compare and contrast two characters in the book.
+ANA_017,Analysis,Compare fall and spring
+ANA_018,Analysis,Compare herbatious and carnivorous animals on a Venn diagram.
+ANA_019,Analysis,Compare how different children come to school.
+ANA_020,Analysis,Compare the place where the story happened with where you live.
+ANA_021,Analysis,Compare this book to the last book you read.
+ANA_022,Analysis,Compare three celebrations using a Venn diagram.
+ANA_023,Analysis,Compare two dog food commercials. What is the difference between them and how do they both sell their products?
+ANA_024,Analysis,Compare two of the characters in this book.
+ANA_025,Analysis,Conduct an investigation to produce information to support a view.
+ANA_026,Analysis,Contrast building in the coastal zone with building in a river floodplain.
+ANA_027,Analysis,Contrast Olympic athletes of today with athletes of past Olympic games.
+ANA_028,Analysis,Differentiate between .call by value and call by reference.
+ANA_029,Analysis,Differentiate printf function calls for displaying prompts and for echoing data.
+ANA_030,Analysis,Distinguish between micro and macro economics.
+ANA_031,Analysis,Distinguish facts from hypotheses
+ANA_032,Analysis,"Divide the story into initiating event, rising action, climax, and falling action"
+ANA_033,Analysis,"Examine what helps to make a good Olympics? Think about money, schedules, sports and people."
+ANA_034,Analysis,"Explain the term conjugal families, by making reference to the different types of societies to which they could belong."
+ANA_035,Analysis,analyze the positive and negative points presented concerning the abolition of guns and write a brief (2-3page) narrative of your analysis.
+ANA_036,Analysis,"Differentiate the passages that attacked a political opponent personally, and those that attacked an opponent's political programs."
+ANA_037,Analysis,How does your pet differ from other animals?
+ANA_038,Analysis,How does...compare/contrast with...?
+ANA_039,Analysis,How is . . . similar to . . .?
+ANA_040,Analysis,How was life different in your town 100 years ago?
+ANA_041,Analysis,How was this similar to . . .?
+ANA_042,Analysis,How would this story be different if it had happened in a different country?
+ANA_043,Analysis,How would you distinguish between polymyositis and viral myositis in a 42-year-old man with weakness and a rash?
+ANA_044,Analysis,"If your story happened in a foreign land, compare that land to the United States."
+ANA_045,Analysis,"If your story occurred long ago, compare that time with today in a good paragraph. If it was a modern story, compare it with a long time ago and tell what would be different."
+ANA_046,Analysis,Investigate innovations that can enhance future Olympics.
+ANA_047,Analysis,Make a diagnosis or analyze a case study.
+ANA_048,Analysis,Select the athlete of the century and analyze why you chose this person.
+ANA_049,Analysis,"If interest were compounded monthly instead of daily, what would the difference in interest be?"
+ANA_050,Analysis,What are the parts or features of...?
+ANA_051,Analysis,Distinguish between the following giving suitable examples
+ANA_052,Analysis,Distinguish between abstract date types (ADTs) and implementations of ADTs
+ANA_053,Analysis,"How do you distinguish between the binge-eating/purging type of anorexia nervosa and bulimia nervosa, purging type"
+ANA_054,Analysis,How does Tdap differ from Td vaccine
+ANA_055,Analysis,How does autonomy differ with age
+ANA_056,Analysis,In what ways do female offenders differ from male offenders
+ANA_057,Analysis,in what ways trajectory patterns differ according to ABC
+ANA_058,Analysis,How do psychologists differ in their general attitudes toward third party presence
+ANA_059,Analysis,How did Chinese newspapers differ from US
+ANA_060,Analysis,How does public health reporting differ today from reporting two years before
+ANA_061,Analysis,How does an endorsement differ from a teaching certificate
+ANA_062,Analysis,How do we differentiate between genuine buyer and undercover buyer
+ANA_063,Analysis,How do we differentiate between an interview and an interrogation?
+ANA_064,Analysis,Differentiate between the following terms along with appropriate examples
+ANA_065,Analysis,Differentiate the following functions using the quotient rule
+ANA_066,Analysis,Can you differentiate between ethnic Chinese and ethnic Koreans
+ANA_067,Analysis,How would you differentiate obstructive apneas from central apneas
+ANA_068,Analysis,How would you differentiate a project from a program
+ANA_069,Analysis,How is scientific progress similar to Darwinian evolution according to Kuhn
+ANA_070,Analysis,"in what ways is oxyperoxidase similar to other oxygenated heme proteins, and how does it differ"
+ANA_071,Analysis,In what ways are foxes similar to wolves and dogs
+ANA_072,Analysis,How are the adolescents with ASD similar of different from each other in their sources of communication breakdowns ?
+ANA_073,Analysis,Examine the data in the EMPLOYEES and DEPARTMENTS tables
+ANA_074,Analysis,Examine the differences between the model excluding the most influential observation and the model including all observations.
+ANA_075,Analysis,Critically examine the strengths and weaknesses of the positivist paradigm
+ANA_076,Analysis,Examine differences between the means of each individual switching factor.
+ANA_077,Analysis,Examine carefully the given map extract on the following page to help you work out the exercise below.
+ANA_078,Analysis,"Inspect each of these Boolean expressions, and determine whether each one is a sum of products, or a product of sums"
+ANA_079,Analysis,Inspect the size of the loaded data: how many objects and variables does the iris data matrix contain?
+ANA_080,Analysis,Can you distinguish for me between what is reasonably  achievable and what are  exaggerations
+ANA_081,Analysis,Can you distinguish aged rums from unaged rums by smell
+ANA_082,Analysis,Can you distinguish pot still rums from column still rums by taste
+ANA_083,Analysis,Inspect the pattern of GPS positions relative to the “known” published value
+ANA_084,Analysis,How does your agency inspect against its expectation for operators
+ANA_085,Analysis,How to inspect and maintain fresh water plumbing systems properly
+ANA_086,Analysis,Can you analyze the fractures and determine which should be repaired surgically
+ANA_087,Analysis,Can you please analyze modern contemporary culture and tell me how your work plays a significant part in the remains of our post-modernist culture ?
+ANA_088,Analysis,"How effectively did students analyze course content on race, class, and privilege through autobiographical reflection"
+ANA_089,Analysis,How do you analyze a marginally RCT
+ANA_090,Analysis,"Contrast the treatment of ""well known"" trademarks provided by Paris Article and by TRIPS Article"
+ANA_091,Analysis,Contrast the Valles Marineris on Mars with the Grand Canyon
+ANA_092,Analysis,How does Hawaii contrast and compare to Florida?
+ANA_093,Analysis,Investigate whether or not the system can be solved for x; y; z
+ANA_094,Analysis,Investigate (pointwise) convergence and absolute convergence of the given series of functions
+ANA_095,Analysis,How would you investigate this patient
+ANA_096,Analysis,How would you investigate this abnormality
+ANA_097,Analysis,What can I do to investigate this problem further
+ANA_098,Analysis,how the investigation was undertaken
+ANA_099,Analysis,How would you differentiate between heterodox and mainstream
+ANA_100,Analysis,"How do I differentiate between ""deceive"" and ""cheat on""?"
+SYN_001,Synthesis,Apply and integrate several different strategies to solve a mathematical problem (not according to one formula(
+SYN_002,Synthesis,Can you create new and unusual uses for . . .?
+SYN_003,Synthesis,Can you design a . . . to . . .?
+SYN_004,Synthesis,Can you develop a proposal which would . . .?
+SYN_005,Synthesis,Can you invent another character for the story?
+SYN_006,Synthesis,Can you see a possible solution to . . .?
+SYN_007,Synthesis,Can you write a new recipe for a tasty dish?
+SYN_008,Synthesis,Choose a character. Rewrite a scene from the story from this character's point of view.
+SYN_009,Synthesis,Combine any two sports to develop a new Olympic sport.
+SYN_010,Synthesis,"Combine elements of drama, music, and dance into a stage presentation."
+SYN_011,Synthesis,Compose a class story.
+SYN_012,Synthesis,Compose a dialogue between Atticus Finch and Tom Robinson when they first met.
+SYN_013,Synthesis,Compose a rhythm or put new words to a known melody.
+SYN_014,Synthesis,Compose a simple rap or rhyme about zoo animals.
+SYN_015,Synthesis,Compose music for a frog play.
+SYN_016,Synthesis,Compose a complete C program that reads text strings from a text file into a suitable data
+SYN_017,Synthesis,Compose a device that would assist an athlete in their training.
+SYN_018,Synthesis,Compose an original work which incorporates five common materials in sculpture.
+SYN_019,Synthesis,Compose your own note-taking design that incorporates all theadvantages of the Cornell Method.
+SYN_020,Synthesis,Create a chart that compares things that use electricity and things that do NOT use electricity.
+SYN_021,Synthesis,Create a new product. Give it a name and plan a marketing campaign.
+SYN_022,Synthesis,"Create a new song for the opening line of ""Mary had a little lamb""."
+SYN_023,Synthesis,Create a set of guidelines to determine the points of a plant susceptible to localized corrosion.
+SYN_024,Synthesis,Create a storyboard for a sequel to your book. Use the same characters.
+SYN_025,Synthesis,Create an equation to represent the solution to this problem.
+SYN_026,Synthesis,Create and perform a play about frogs.
+SYN_027,Synthesis,Create plan of local environment by drawing around boxes.
+SYN_028,Synthesis,Design a building according to given specifications
+SYN_029,Synthesis,design a cost effective strategy to generate reliable data.
+SYN_030,Synthesis,Design a machine to perform a specific task.
+SYN_031,Synthesis,Design a new animal to live in the jungle.
+SYN_032,Synthesis,Design a poster for this book.
+SYN_033,Synthesis,Design a testing scenario to assess the susceptibility of an alloy to be used in a given environment?
+SYN_034,Synthesis,Design and make an animal that moves.
+SYN_035,Synthesis,Design costumes for the characters.
+SYN_036,Synthesis,Design the architecture of the software system based on the requirements defined in the Software Requirement Specification document
+SYN_037,Synthesis,Develop a hypothesis.
+SYN_038,Synthesis,Develop a plan for a new Olympic Bid System.
+SYN_039,Synthesis,Develop a SQA Plan for a software development project which is defined in the attached document.
+SYN_040,Synthesis,"Develop a way to teach the concept of ""adjectives""."
+SYN_041,Synthesis,Develop one plausible ending for all three short stories below.
+SYN_042,Synthesis,Devise a new economic system based on the ones that already exist.
+SYN_043,Synthesis,Devise plans to market or make artwork more valuable.
+SYN_044,Synthesis,Draw a painting that uses various principles of perspective to achieve its effect.
+SYN_045,Synthesis,"Explain how the biological concept of symbiotic relationships could be used to help solve socially created problems like water pollution, overflowing garbage landfills, or homelessness."
+SYN_046,Synthesis,Explain why it is likely that a matriarchal family system would be found in a matrilocal or matrilineal society.
+SYN_047,Synthesis,"Following the identification of the forms of corrosion that were involved in a failure, recommend a solution to avoid this failure?"
+SYN_048,Synthesis,Given two opposing theories design an experiment to compare them.
+SYN_049,Synthesis,How could we determine the number of pennies in a jar without counting them?
+SYN_050,Synthesis,How could you re-write this story with a city setting?
+SYN_051,Synthesis,"how do the clauses and expressions given in the article which replace GOTO statements, lead to the three traditional control statements"
+SYN_052,Synthesis,How many ways can you . . .?
+SYN_053,Synthesis,How would the U.S.A. be different if the South had won the Civil War?
+SYN_054,Synthesis,How would you change the story to create a different ending?
+SYN_055,Synthesis,How would you create/design a new...?
+SYN_056,Synthesis,How would you restructure the school day to reflect children's developmental needs?
+SYN_057,Synthesis,Identify one problem in the book and give an alternate solution one not given by the author.
+SYN_058,Synthesis,If you had access to all resources how would you deal with . . .?
+SYN_059,Synthesis,Integrate training from several sources to solve a problem.
+SYN_060,Synthesis,Invent a machine to do a specific task.
+SYN_061,Synthesis,Justify your choice of data structure.
+SYN_062,Synthesis,Make a radio announcement that advertise the book. Write it out.
+SYN_063,Synthesis,Make up a new language code and write material using it.
+SYN_064,Synthesis,Name one character. Rewrite the story from this character's point of view.
+SYN_065,Synthesis,Organize this book into three or more sections and give your own subtitle for each section.
+SYN_066,Synthesis,Plan a research paper on a given historical topic
+SYN_067,Synthesis,Predict the differences of a planet with no seasonal changes.
+SYN_068,Synthesis,Prepare a book jacket that illustrates the kind of book as well as the story.
+SYN_069,Synthesis,Pretend you are a librarian recommending this book to someone. Write a paragraph telling what  you would say.
+SYN_070,Synthesis,Revise and process to improve the outcome.
+SYN_071,Synthesis,Revise how to complete a complex task in order to improve the outcome.
+SYN_072,Synthesis,Revises and process to improve the outcome.
+SYN_073,Synthesis,"structure, sorts the list in ascending order, displays the list on the screen and stores the list"
+SYN_074,Synthesis,Suppose Phillip wasn't rescued shortly after Timothy's death. How long could he have survived?
+SYN_075,Synthesis,"Using information from the book about one of the main characters, rewrite the ending of the book."
+SYN_076,Synthesis,What ideas can you add to...?
+SYN_077,Synthesis,What might happen if you combined...?
+SYN_078,Synthesis,What solutions would you suggest for...?
+SYN_079,Synthesis,What would happen if . . .?
+SYN_080,Synthesis,What would you predict/infer from...?
+SYN_081,Synthesis,Why don’t you devise your own way to deal with . . .?
+SYN_082,Synthesis,Why not compose a song about . . .?
+SYN_083,Synthesis,"Write a C program that accepts integer inputs from the screen, computes the total and average values; and displays the values on the screen."
+SYN_084,Synthesis,Write a letter to the editor on a social issue of concern to you.
+SYN_085,Synthesis,Write a logically organized argument in favor of a given position.
+SYN_086,Synthesis,Write a poem about this book.
+SYN_087,Synthesis,Write a set of rules to prevent what happened in the story.
+SYN_088,Synthesis,Write a short story relating a personal experience in the style of a picaresque novel.
+SYN_089,Synthesis,Write a song about 'Old MacDonald' who had a bulldozer instead of a farm.
+SYN_090,Synthesis,Write an essay in not more than 250 words about India and Technological Advancement. Use active voice as much as possible.
+SYN_091,Synthesis,How do you combine the results of various individual tests to determine whether a student can progress to a next semester / phase / year?
+SYN_092,Synthesis,How can we combine and abstract facts about a software system to create new knowledge?
+SYN_093,Synthesis,How to combine virtual symmetry and symbolic model checking effectively
+SYN_094,Synthesis,How do we efficiently combine multiple subject graphs to construct an aig with choice
+SYN_095,Synthesis,how do we devise a way to enforce the laws
+SYN_096,Synthesis,can you devise an explicit formula for
+SYN_097,Synthesis,Do you devise a systematic approach in order to get larger progressions
+SYN_098,Synthesis,Develop and execute a program for this exercise
+SYN_099,Synthesis,Develop a network based on the following information: Activity Immediate predecessors
+SYN_100,Synthesis,How could we develop a coherent measure of success for organisations engaged in this type of activity with young people?
+EVA_001,Evaluation,"After designing an experiment, examining the results, and drawing conclusions, determines in what ways the experiment could be conducted more effectively in order to draw more productive conclusions in the future."
+EVA_002,Evaluation,"After examining the videotape of a play in a football game, determine the degree to which the defensive team performed effectively and"
+EVA_003,Evaluation,"After solving a problem, determine the degree to which the problem was solved as efficiently as possible"
+EVA_004,Evaluation,Appraise data in support of a hypothesis.
+EVA_005,Evaluation,Appraise the speech's effectiveness based upon the class' criteria.
+EVA_006,Evaluation,Are there students who should not use the Cornell method?
+EVA_007,Evaluation,Are you a . . . person?
+EVA_008,Evaluation,Assess the appropriateness of an author's conclusions based on the evidence given.
+EVA_009,Evaluation,Assess the importance of understanding seasonal patters.
+EVA_010,Evaluation,Assess the relative effectiveness of different graphical representations of the same data or biological concept.
+EVA_011,Evaluation,Assess the strengths and weaknesses of the current Olympics and recommend action that should be taken in future Olympics: What can be
+EVA_012,Evaluation,"Award the contract to the best proposal. Rank the principles of ""good sportsmanship"" in order of importance to you."
+EVA_013,Evaluation,Can you defend the idea that Simon's incident with the pig's head is the most mystical in the story?
+EVA_014,Evaluation,Can you defend your position about . . .?
+EVA_015,Evaluation,Choose a paint schedule for the maintenance of an outdoor structure? (level 2)
+EVA_016,Evaluation,Choose and illustrate the two most important events in the story.
+EVA_017,Evaluation,Conclude and support which economic system leads to a higher standard of living.
+EVA_018,Evaluation,Construct a poster that will advertise your new food product in an exciting and irresistible way.
+EVA_019,Evaluation,Critique an experimental design or a research proposal.
+EVA_020,Evaluation,"Critique the other student's (or your own) speech, based on the criteria we have studied this semester."
+EVA_021,Evaluation,Decide whether you are in favor of building on a floodplain; defend your position in a debate.
+EVA_022,Evaluation,Decide whether you could have survived on the island blind and alone. Write about things that would have been challenging making sure to
+EVA_023,Evaluation,Decide whether you learned enough about electricity from this book.
+EVA_024,Evaluation,Decide which candidate would best fill the position of principal.
+EVA_025,Evaluation,Decide which course of action was most effective
+EVA_026,Evaluation,Decide which method of solving a problem was most effective
+EVA_027,Evaluation,Defend the following claim: The Cornell method works so well that it could turn even a poor lecture into a valuable learning experience.
+EVA_028,Evaluation,Defend your use of a specific strategy in solving the problem.
+EVA_029,Evaluation,Describe the economic consequence of a neolocal society. Support your description with information you have learned from this course.
+EVA_030,Evaluation,Design a healthy menu that you think most people would enjoy using the healthy eating guide.
+EVA_031,Evaluation,Determine if a character’s actions were heroic
+EVA_032,Evaluation,Do you agree...?
+EVA_033,Evaluation,Do you think . . . is a good or a bad thing?
+EVA_034,Evaluation,Establish criteria for making this choice and defend your final selection.
+EVA_035,Evaluation,"Evaluate a work of art, giving the reasons for your evaluation."
+EVA_036,Evaluation,Evaluate appropriate and inappropriate actions of characters.
+EVA_037,Evaluation,Evaluate board games and justify why rules are important.
+EVA_038,Evaluation,Evaluate the corrosion monitoring needs of a chemical processing plant
+EVA_039,Evaluation,Evaluate the level of galvanic coupling between two metals using basic kinetic information? (level 4)
+EVA_040,Evaluation,Evaluate two Internet sources of information about the Egyptians. Which would be a better choice for your purpose and why?
+EVA_041,Evaluation,Evaluate whether their model is a true representation of the local environment.
+EVA_042,Evaluation,Evaluate your own or a peer's essay in terms of the principles of composition discussed during the semester.
+EVA_043,Evaluation,Examine the stated positions of both major political candidates with regard to a particular issue and state good reasons (based on principles discussed in class) for why one candidates position is more likely to be effective than the other's.
+EVA_044,Evaluation,Explain and justify a new budget.
+EVA_045,Evaluation,Explain choices made in making recommendations to an end user.
+EVA_046,Evaluation,"Given an argument on any position, enumerate the logical fallacies in that argument."
+EVA_047,Evaluation,"Given the data available on a research question, take a position and defend it."
+EVA_048,Evaluation,"Given the data we've looked at on this topic, evaluate how appropriate this conclusion is and defend your answer."
+EVA_049,Evaluation,"Given the two solutions to the stated programming problem, rate the solutions in  terms of efficiency and readability."
+EVA_050,Evaluation,"Given three possible approaches to implement the defined system, discuss the possible advantages and disadvantages of each approach."
+EVA_051,Evaluation,"Given two possible solutions, A and B, to solving the given software development problem, decide on the best solution. Give your justification."
+EVA_052,Evaluation,How effective are . . .?
+EVA_053,Evaluation,How would you decide about...?
+EVA_054,Evaluation,How would you feel if . . .?
+EVA_055,Evaluation,How would you have handled . . .?
+EVA_056,Evaluation,"improved, reformed or rejected?"
+EVA_057,Evaluation,"In a given clinical situation, select the most reasonable intervention and predict the main effects and possible side effects."
+EVA_058,Evaluation,Is there a better solution to . . .?
+EVA_059,Evaluation,Judge aesthetic qualities and relationship to future values.
+EVA_060,Evaluation,judge the difficulty level for yourself.
+EVA_061,Evaluation,Judge the value of . . .?
+EVA_062,Evaluation,Judge whether it would be possible to survive on an island alone and blinded. Write about it.
+EVA_063,Evaluation,Judge whether Olympic Ideals are realistic or unrealistic for the contemporary elite athlete.
+EVA_064,Evaluation,Justify and nominate ways to prevent animal extinction.
+EVA_065,Evaluation,Justify the title To Kill a Mockingbird .
+EVA_066,Evaluation,Listen to two classmates conversing on tape and critique their performance on the basis of the skills covered this semester.
+EVA_067,Evaluation,Place the following in order of priority...
+EVA_068,Evaluation,Predict what will happen next in.
+EVA_069,Evaluation,Predict whether Phillip will ever go back to visit the Cay after several years of recovery. Assuming he gets his sight back.
+EVA_070,Evaluation,Recommend how our classroom or playground could be improved.
+EVA_071,Evaluation,Select the best proposal for a proposed water treatment plant.
+EVA_072,Evaluation,Select the most effective solution.
+EVA_073,Evaluation,suggest ways in which it could have responded more effectively
+EVA_074,Evaluation,decide about the most exciting part of the book. being sure to give at least three reasons why?
+EVA_075,Evaluation,Use a judge and jury to discuss the statement 'Children enjoy Anthony Browne's books because of the illustrations'.
+EVA_076,Evaluation,"Using straight value depreciation, decide between two copper-nickel alloys for the design of a heat exchanger."
+EVA_077,Evaluation,"Using the basic principles of socialism discussed in this course, evaluate the US economic system by providing key arguments to support your judgment."
+EVA_078,Evaluation,Was Hemingway a great American writer? First you will need to define greatness.
+EVA_079,Evaluation,What changes to . . . would you recommend?
+EVA_080,Evaluation,What criteria would you use to assess the validity of a business contract?
+EVA_081,Evaluation,What criteria would you use to assess...?
+EVA_082,Evaluation,What do you think about . . .?
+EVA_083,Evaluation,What is part of this book did you like best. Tell why you like it?
+EVA_084,Evaluation,What is the most important...?
+EVA_085,Evaluation,Which of the following actions would probably be least effective in determining the answer?
+EVA_086,Evaluation,"Which of the two algorithms, bubblesort or quicksort, is more efficient? Justify your answer."
+EVA_087,Evaluation,Would you have liked to have had Cinderella for a sister? Explain why or why not.
+EVA_088,Evaluation,Write a list of criteria to judge the Willy raps.
+EVA_089,Evaluation,Revise the story and specify the type of audience that would enjoy this book.
+EVA_090,Evaluation,Estimate the epicentral coordinates of the earth-quake
+EVA_091,Evaluation,Estimate the risk of serious illness for consumers in different susceptible population groups
+EVA_092,Evaluation,Estimate expenditure on HIV/AIDS education
+EVA_093,Evaluation,Estimate the difficulty of the question
+EVA_094,Evaluation,Estimate roughly how long the collision process takes
+EVA_095,Evaluation,What do you think is the best thing about coming to Viestal?
+EVA_096,Evaluation,What do you think is the mass and why
+EVA_097,Evaluation,What do you think are the strengths of using integrated math in your program?
+EVA_098,Evaluation,Do you think that this statement conveys the idea that i am trying to portray
+EVA_099,Evaluation,How do you think the community should grow or change
+EVA_100,Evaluation,How Do You Think One Should Reason in Making Ethical Decisions in Business

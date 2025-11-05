@@ -1,0 +1,22 @@
+Loading model in 4-bit...
+The `load_in_4bit` and `load_in_8bit` arguments are deprecated and will be removed in the future versions. Please, pass a `BitsAndBytesConfig` object in `quantization_config` argument instead.
+Preparing model for LoRA...
+trainable params: 2,523,136 || all params: 7,618,139,648 || trainable%: 0.0331
+Trainable parameters: None
+Tokenizing dataset...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+
+============================================================
+Starting training...
+============================================================
+
+✗ Error training Qwen/Qwen2.5-7B-Instruct: CUDA out of memory. Tried to allocate 2.03 GiB. GPU 0 has a total capacity of 14.74 GiB of which 820.12 MiB is free. Process 70827 has 13.94 GiB memory in use. Of the allocated memory 12.23 GiB is allocated by PyTorch, and 1.26 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+
+############################################################
+MODEL 2/3: mistralai/Mistral-7B-Instruct-v0.3
+############################################################
+
+============================================================
+Fine-tuning mistralai/Mistral-7B-Instruct-v0.3...
+============================================================

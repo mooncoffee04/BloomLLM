@@ -1,0 +1,13 @@
+{"time":"2025-11-03T22:29:41.112839809Z","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-11-03T22:29:41.24458985Z","level":"INFO","msg":"stream: created new stream","id":"awiehof3"}
+{"time":"2025-11-03T22:29:41.244640088Z","level":"INFO","msg":"stream: started","id":"awiehof3"}
+{"time":"2025-11-03T22:29:41.244681898Z","level":"INFO","msg":"handler: started","stream_id":"awiehof3"}
+{"time":"2025-11-03T22:29:41.244712952Z","level":"INFO","msg":"writer: Do: started","stream_id":"awiehof3"}
+{"time":"2025-11-03T22:29:41.244708274Z","level":"INFO","msg":"sender: started","stream_id":"awiehof3"}
+{"time":"2025-11-03T22:31:27.521833214Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-11-03T22:31:27.761243777Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-11-03T22:31:27.768915438Z","level":"INFO","msg":"stream: closing","id":"awiehof3"}
+{"time":"2025-11-03T22:31:27.76895306Z","level":"INFO","msg":"handler: closed","stream_id":"awiehof3"}
+{"time":"2025-11-03T22:31:27.768969687Z","level":"INFO","msg":"writer: Close: closed","stream_id":"awiehof3"}
+{"time":"2025-11-03T22:31:27.768991823Z","level":"INFO","msg":"sender: closed","stream_id":"awiehof3"}
+{"time":"2025-11-03T22:31:27.76907514Z","level":"INFO","msg":"stream: closed","id":"awiehof3"}

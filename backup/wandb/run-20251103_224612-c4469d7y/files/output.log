@@ -1,0 +1,60 @@
+Loading model in 4-bit...
+
+============================================================
+GPU PROCESS CHECK
+============================================================
+Mon Nov  3 22:47:36 2025
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 560.35.03              Driver Version: 560.35.03      CUDA Version: 12.6     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |
+| N/A   72C    P0             31W /   70W |   11605MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |
+| N/A   71C    P0             31W /   70W |     103MiB /  15360MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
++-----------------------------------------------------------------------------------------+
+
+
+PyTorch GPU Memory:
+GPU 0:
+  Total: 14.74 GB
+  Allocated: 9.09 GB
+  Reserved: 10.90 GB
+  Free: 5.66 GB
+GPU 1:
+  Total: 14.74 GB
+  Allocated: 0.00 GB
+  Reserved: 0.00 GB
+  Free: 14.74 GB
+
+============================================================
+TENSORS ON GPU
+============================================================
+/usr/local/lib/python3.11/dist-packages/torch/__init__.py:1113: FutureWarning: `torch.distributed.reduce_op` is deprecated, please use `torch.distributed.ReduceOp` instead
+  return isinstance(obj, torch.Tensor)
+  Tensor: torch.Size([256]), torch.float32, 0.00 MB
+  Tensor: torch.Size([152064, 3584]), torch.float32, 2079.00 MB
+  Tensor: torch.Size([6422528, 1]), torch.uint8, 6.12 MB
+  Tensor: torch.Size([3584]), torch.float32, 0.01 MB
+  Tensor: torch.Size([4, 3584]), torch.float32, 0.05 MB
+  Tensor: torch.Size([3584, 4]), torch.float32, 0.05 MB
+  Tensor: torch.Size([917504, 1]), torch.uint8, 0.88 MB
+  Tensor: torch.Size([512]), torch.float32, 0.00 MB
+  Tensor: torch.Size([917504, 1]), torch.uint8, 0.88 MB
+  Tensor: torch.Size([512]), torch.float32, 0.00 MB
+
+Total GPU tensors: 1122
+Total size: 9.17 GB

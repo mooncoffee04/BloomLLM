@@ -1,0 +1,55 @@
+Loading model in 4-bit...
+Preparing model for LoRA...
+trainable params: 1,261,568 || all params: 7,616,878,080 || trainable%: 0.0166
+Trainable parameters: None
+Tokenizing dataset...
+No label_names provided for model class `PeftModelForCausalLM`. Since `PeftModel` hides base models input arguments, if label_names is not given, label_names can't be set automatically within `Trainer`. Note that empty label_names list will be used instead.
+
+============================================================
+Starting training...
+============================================================
+Training error: CUDA out of memory. Tried to allocate 2.03 GiB. GPU 0 has a total capacity of 14.74 GiB of which 1.51 GiB is free. Process 70827 has 13.23 GiB memory in use. Of the allocated memory 12.42 GiB is allocated by PyTorch, and 363.49 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+✗ Error training Qwen/Qwen2.5-7B-Instruct: CUDA out of memory. Tried to allocate 2.03 GiB. GPU 0 has a total capacity of 14.74 GiB of which 1.51 GiB is free. Process 70827 has 13.23 GiB memory in use. Of the allocated memory 12.42 GiB is allocated by PyTorch, and 363.49 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/tmp/ipykernel_852/1842124845.py", line 191, in <cell line: 0>
+    finetune_model(model_id, out_dir)
+  File "/tmp/ipykernel_852/1842124845.py", line 148, in finetune_model
+    trainer.train()
+  File "/usr/local/lib/python3.11/dist-packages/transformers/trainer.py", line 2206, in train
+    return inner_training_loop(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/trainer.py", line 2548, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs, num_items_in_batch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/transformers/trainer.py", line 3797, in training_step
+    self.accelerator.backward(loss, **kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/accelerate/accelerator.py", line 2574, in backward
+    self.scaler.scale(loss).backward(**kwargs)
+  File "/usr/local/lib/python3.11/dist-packages/torch/_tensor.py", line 626, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.11/dist-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.11/dist-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/autograd/function.py", line 307, in apply
+    return user_fn(self, *args)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/dist-packages/torch/utils/checkpoint.py", line 321, in backward
+    torch.autograd.backward(outputs_with_grad, args_with_grad)
+  File "/usr/local/lib/python3.11/dist-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.11/dist-packages/torch/autograd/graph.py", line 823, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.03 GiB. GPU 0 has a total capacity of 14.74 GiB of which 1.51 GiB is free. Process 70827 has 13.23 GiB memory in use. Of the allocated memory 12.42 GiB is allocated by PyTorch, and 363.49 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+
+
+############################################################
+MODEL 2/3: mistralai/Mistral-7B-Instruct-v0.3
+############################################################
+
+============================================================
+Fine-tuning mistralai/Mistral-7B-Instruct-v0.3...
+============================================================

@@ -1,0 +1,24 @@
+2025-11-03 22:21:56,583 INFO    MainThread:852 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /kaggle/working/wandb/run-20251103_222156-xn69zz0t/logs/debug.log
+2025-11-03 22:21:56,583 INFO    MainThread:852 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /kaggle/working/wandb/run-20251103_222156-xn69zz0t/logs/debug-internal.log
+2025-11-03 22:21:56,583 INFO    MainThread:852 [wandb_init.py:init():830] calling init triggers
+2025-11-03 22:21:56,583 INFO    MainThread:852 [wandb_init.py:init():835] wandb.init called with sweep_config: {}
+config: {'model': 'Qwen/Qwen2.5-7B-Instruct', 'dataset': 'ASAP-AES-500', 'train_size': 300, 'lora_r': 8, 'steps': 300, 'batch_size': 4, 'grad_accum': 4, '_wandb': {}}
+2025-11-03 22:21:57,050 INFO    MainThread:852 [wandb_init.py:init():871] starting backend
+2025-11-03 22:21:57,050 INFO    MainThread:852 [wandb_init.py:init():874] sending inform_init request
+2025-11-03 22:21:57,054 INFO    MainThread:852 [wandb_init.py:init():882] backend started and connected
+2025-11-03 22:21:57,062 INFO    MainThread:852 [wandb_run.py:_label_probe_notebook():1304] probe notebook
+2025-11-03 22:22:02,499 INFO    MainThread:852 [wandb_init.py:init():953] updated telemetry
+2025-11-03 22:22:02,500 INFO    MainThread:852 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-11-03 22:22:02,757 INFO    MainThread:852 [wandb_init.py:init():1029] starting run threads in backend
+2025-11-03 22:22:03,502 INFO    MainThread:852 [wandb_run.py:_console_start():2458] atexit reg
+2025-11-03 22:22:03,502 INFO    MainThread:852 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-11-03 22:22:03,502 INFO    MainThread:852 [wandb_run.py:_redirect():2375] Wrapping output streams.
+2025-11-03 22:22:03,502 INFO    MainThread:852 [wandb_run.py:_redirect():2398] Redirects installed.
+2025-11-03 22:22:03,503 INFO    MainThread:852 [wandb_init.py:init():1075] run started, returning control to user process
+2025-11-03 22:24:15,315 INFO    MainThread:852 [wandb_run.py:_finish():2224] finishing run mishralaavanya-svkm-s-narsee-monjee-institute-of-managem/llm-as-a-jury-finetuning/xn69zz0t
+2025-11-03 22:24:15,315 INFO    MainThread:852 [wandb_run.py:_atexit_cleanup():2423] got exitcode: 0
+2025-11-03 22:24:15,316 INFO    MainThread:852 [wandb_run.py:_restore():2405] restore
+2025-11-03 22:24:15,316 INFO    MainThread:852 [wandb_run.py:_restore():2411] restore done
+2025-11-03 22:24:16,003 INFO    MainThread:852 [wandb_run.py:_footer_history_summary_info():3903] rendering history
+2025-11-03 22:24:16,003 INFO    MainThread:852 [wandb_run.py:_footer_history_summary_info():3935] rendering summary
+2025-11-03 22:24:16,004 INFO    MainThread:852 [wandb_run.py:_footer_sync_info():3864] logging synced files
